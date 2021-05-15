@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_margin="5dp"
+        android:background="#c70039"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/id">
+
+        <TextView
+            android:id="@+id/namaMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="nama"
+            android:textColor="#FFFFFF"
+            tools:ignore="MissingConstraints"/>
+
+        <TextView
+            android:id="@+id/carboMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="30dp"
+            android:textSize="20sp"
+            android:text="carbo"
+            android:textColor="#FFFFFF"
+            tools:ignore="MissingConstraints"/>
+
+        <!--<Button
+            android:id="@+id/btnHapus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/white"
+            android:text="tambah"
+            android:textSize="18sp"
+            android:backgroundTint="@color/bottomnavcolor"
+            android:layout_marginStart="150dp"/>
+-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

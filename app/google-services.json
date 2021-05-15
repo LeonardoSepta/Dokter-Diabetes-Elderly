@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "515101545818",
+    "firebase_url": "https://dokter-diabetes-database-default-rtdb.firebaseio.com",
+    "project_id": "dokter-diabetes-database",
+    "storage_bucket": "dokter-diabetes-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515101545818:android:db60509ce475276f2a8f63",
+        "android_client_info": {
+          "package_name": "com.example.dokterdiabetes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515101545818-m8tmspfsfdkt2vf2h581gdeih48a3klv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-oxo9pwCmhpOXMAoE8Jal3kE7pZUInD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515101545818-m8tmspfsfdkt2vf2h581gdeih48a3klv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515101545818:android:2754b81939adf6e02a8f63",
+        "android_client_info": {
+          "package_name": "com.example.dokterdiabetesdummy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515101545818-m8tmspfsfdkt2vf2h581gdeih48a3klv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-oxo9pwCmhpOXMAoE8Jal3kE7pZUInD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515101545818-m8tmspfsfdkt2vf2h581gdeih48a3klv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515101545818:android:7272c4551c406c902a8f63",
+        "android_client_info": {
+          "package_name": "com.example.dokterdiabetesforelderly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515101545818-m8tmspfsfdkt2vf2h581gdeih48a3klv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-oxo9pwCmhpOXMAoE8Jal3kE7pZUInD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515101545818-m8tmspfsfdkt2vf2h581gdeih48a3klv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

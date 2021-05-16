@@ -95,6 +95,7 @@ public class Carbocalculator extends AppCompatActivity {
             }
         });*/
         sarapanDB.addListenerForSingleValueEvent(new ValueEventListener() {
+            //syntax untuk sarapan
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
@@ -203,7 +204,8 @@ public class Carbocalculator extends AppCompatActivity {
 
 
     public void back(View view) {
-        finish();
+        Intent intent = new Intent(Carbocalculator.this, MainMenu.class);
+        startActivity(intent);
     }
 
     public void masukLayoutMknMalam(View view) {
@@ -218,6 +220,11 @@ public class Carbocalculator extends AppCompatActivity {
 
     public void masukLayoutMknSiang(View view) {
         Intent intent = new Intent(Carbocalculator.this, Tambahmknsiang.class);
+        startActivity(intent);
+    }
+
+    public void simpanCarbo(View view) {
+        Intent intent = new Intent(Carbocalculator.this, HasilCarbocalculator.class);
         startActivity(intent);
     }
 }

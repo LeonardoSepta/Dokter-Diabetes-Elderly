@@ -8,11 +8,10 @@
     android:orientation="vertical"
     android:background="#c70039">
 
-
     <ImageView
         android:layout_width="126dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical|center_horizontal"
         android:src="@drawable/logodokterdiabetes"
-        tools:ignore="MissingConstraints"></ImageView>
+        tools:ignore="ContentDescription,MissingConstraints"/>
 </LinearLayout>

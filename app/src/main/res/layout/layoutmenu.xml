@@ -11,8 +11,8 @@
         android:background="#c70039"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
         android:id="@+id/id">
 
         <TextView
@@ -28,28 +28,39 @@
             android:textColor="#FFFFFF"
             tools:ignore="MissingConstraints"/>
 
+        <!--android:layout_centerHorizontal="true"-->
+
         <TextView
             android:id="@+id/carboMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginEnd="30dp"
-            android:textSize="20sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="60dp"
             android:text="carbo"
+            android:layout_marginTop="8dp"
             android:textColor="#FFFFFF"
-            tools:ignore="MissingConstraints"/>
+            android:textSize="20sp"
+            tools:ignore="MissingConstraints" />
 
-        <Button
+        <ImageButton
+            android:id="@+id/btnTambah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/basecolor"
+            android:src="@drawable/ic_baseline_add_circle_24"
+            />
+        <!--<Button
             android:id="@+id/btnTambah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:textColor="@color/white"
-            android:text="tambah"
+            android:text="Tambah"
             android:textSize="18sp"
             android:backgroundTint="@color/bottomnavcolor"
             android:layout_marginStart="150dp"/>
-
+-->
 
     </RelativeLayout>
 </RelativeLayout>

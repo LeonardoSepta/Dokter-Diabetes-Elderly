@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DokterDiabetesForElderly">
-        <activity android:name=".ArtikelInfoDiabetes"></activity>
+        <activity android:name=".HasilCarbocalculator"></activity>
+        <activity android:name=".ArtikelInfoDiabetes" />
         <activity android:name=".ArtikelKesehatan" />
         <activity android:name=".Artikel" />
         <activity android:name=".Tambahmknmalam" />

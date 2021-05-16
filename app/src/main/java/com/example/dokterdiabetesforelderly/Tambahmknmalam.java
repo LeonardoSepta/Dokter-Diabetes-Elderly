@@ -57,11 +57,12 @@ public class Tambahmknmalam extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 CheckData();
-                for (DataSnapshot dataSarapan:snapshot.getChildren()){
+                for (DataSnapshot dataMknMalam:snapshot.getChildren()){
                     PoolData poolData = new PoolData();
-                    //PoolData poolData = dataSarapan.getValue(PoolData.class);
-                    poolData.setNama(dataSarapan.child("nama").getValue().toString());
-                    poolData.setCarbo(dataSarapan.child("carbo").getValue().toString());
+                    /* PoolData poolData = dataMknMalam.getValue(PoolData.class);*/
+                    poolData.setNama(dataMknMalam.child("nama").getValue().toString());
+                    poolData.setCarbo(dataMknMalam.child("carbo").getValue().toString());
+                    //poolData.setCarbo(dataMknMalam.child("carbo").getValue().toString());
 
                     listArray.add(poolData);
                 }
@@ -76,6 +77,7 @@ public class Tambahmknmalam extends AppCompatActivity {
             }
         });
     }
+
     public void back(View view) {
         finish();
     }

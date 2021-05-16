@@ -57,11 +57,11 @@ public class Tambahmknsiang extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 CheckData();
-                for (DataSnapshot dataSarapan:snapshot.getChildren()){
+                for (DataSnapshot dataMknSiang:snapshot.getChildren()){
                     PoolData poolData = new PoolData();
                     //PoolData poolData = dataSarapan.getValue(PoolData.class);
-                    poolData.setNama(dataSarapan.child("nama").getValue().toString());
-                    poolData.setCarbo(dataSarapan.child("carbo").getValue().toString());
+                    poolData.setNama(dataMknSiang.child("nama").getValue().toString());
+                    poolData.setCarbo(dataMknSiang.child("carbo").getValue().toString());
 
                     listArray.add(poolData);
                 }

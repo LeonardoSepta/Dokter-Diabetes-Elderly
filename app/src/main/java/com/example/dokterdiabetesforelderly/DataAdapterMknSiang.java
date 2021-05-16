@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,7 +70,7 @@ public class DataAdapterMknSiang extends RecyclerView.Adapter<DataAdapterMknSian
 
     public class viewHolder extends RecyclerView.ViewHolder {
         TextView namaMenu, carboMenu;
-        Button btnTambah;
+        ImageButton btnTambah;
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             namaMenu = itemView.findViewById(R.id.namaMenu);

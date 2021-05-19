@@ -22,7 +22,7 @@ public class MainMenu extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.beranda);
 
-        /*bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
@@ -41,15 +41,14 @@ public class MainMenu extends AppCompatActivity {
                 return false;
             }
         });
-*/
 
-     /*   Konsultasi = (CardView) findViewById(R.id.menuKonsultasi);
+        Konsultasi = (CardView) findViewById(R.id.menuKonsultasi);
         Konsultasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 OpenKonsultasi();
             }
-        });*/
+        });
 
         Artikel = (CardView) findViewById(R.id.menuArtikel);
         Artikel.setOnClickListener(new View.OnClickListener() {
@@ -59,13 +58,13 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        /*Resep = (CardView) findViewById(R.id.Resep);
+        Resep = (CardView) findViewById(R.id.Resep);
         Resep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 OpenResep();
             }
-        });*/
+        });
 
         CarboCalculator = (CardView) findViewById(R.id.carboCalcuator);
         CarboCalculator.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +73,7 @@ public class MainMenu extends AppCompatActivity {
                 OpenCarboCalculator();
             }
         });
-/*
+
         BeratBadan = (CardView) findViewById(R.id.Weight);
         BeratBadan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,38 +88,37 @@ public class MainMenu extends AppCompatActivity {
             public void onClick(View v) {
                 OpenGlukosa();
             }
-        });*/
+        });
 
     }
 
-    /*public void OpenKonsultasi (){
-        Intent intent = new Intent(MainMenu.this, com.example.dokterdiabetes.Konsultasi.class);
+    public void OpenKonsultasi (){
+        Intent intent = new Intent(MainMenu.this, Konsultasi.class);
         startActivity(intent);
-    }*/
+    }
 
     public void OpenArtikel (){
         Intent intent = new Intent(MainMenu.this, Artikel.class);
         startActivity(intent);
     }
 
-    /*public void OpenResep (){
-        Intent intent = new Intent( MainMenu.this, com.example.dokterdiabetes.Resep.class);
+    public void OpenResep (){
+        Intent intent = new Intent( MainMenu.this, Resep.class);
         startActivity(intent);
-    }*/
+    }
 
 
     public void OpenCarboCalculator (){
         Intent intent = new Intent(MainMenu.this, Datacarbocalculator.class);
         startActivity(intent);
     }
-/*
     public void OpenBeratBadan (){
-        Intent intent = new Intent(MainMenu.this, Databeratbadan.class);
+        Intent intent = new Intent(MainMenu.this, DataBeratBadan.class);
         startActivity(intent);
     }
 
     public void OpenGlukosa (){
-        Intent intent = new Intent(MainMenu.this, Dataglukosa.class);
+        Intent intent = new Intent(MainMenu.this, DataGlukosa.class);
         startActivity(intent);
-    }*/
+    }
 }

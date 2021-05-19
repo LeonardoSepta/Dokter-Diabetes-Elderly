@@ -4,12 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HasilCarbocalculator"
-    android:background="#C70039"
+    tools:context=".HasilGlukosa"
+    android:background="@color/basecolor"
     android:orientation="vertical">
 
-
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,10 +64,7 @@
                     tools:ignore="HardcodedText">
                 </TextView>
             </LinearLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="UselessParent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
@@ -71,15 +74,20 @@
                 tools:ignore="HardcodedText">
 
                 <com.github.mikephil.charting.charts.BarChart
-                    android:id="@+id/carboBarChart"
+                    android:id="@+id/glukosaBarChart"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     >
                 </com.github.mikephil.charting.charts.BarChart>
 
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>-->
 
                 <Button
-                    android:onClick="dataCarboCal"
+                    android:onClick="dataGlukosa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical|center_horizontal"
@@ -92,7 +100,7 @@
                 </Button>
 
             </LinearLayout>
-
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

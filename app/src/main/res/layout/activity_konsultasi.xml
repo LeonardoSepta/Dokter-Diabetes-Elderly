@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Konsultasi"
+    android:background="#C70039"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageButton
+            android:onClick="back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#c70039"
+            android:src="@drawable/ic_baseline_navigate_before_24"
+            tools:targetApi="lollipop">
+        </ImageButton>
+        <TextView
+            android:onClick="back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingTop="20dp">
+        </TextView>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="30dp"
+            android:src="@drawable/logodokterdiabetes">
+        </ImageView>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Konsultasi"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:textColor="#FFFFFF"
+        >
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navkonsultasi"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/bottomnavcolor"
+            app:menu="@menu/menukonsultasi"
+            app:itemIconTint="@drawable/state_bottomnav"
+            app:itemTextColor="@drawable/state_bottomnav"
+
+            >
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:background="@drawable/backgroundmenu"
+        >
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:id="@+id/listKonsultasi"
+            >
+        </ListView>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:id="@+id/buatkonsultasi"
+        android:text="Buat Pertanyaan Konsultasi"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:paddingBottom="10dp"
+        android:backgroundTint="#a9a9a9"
+        android:layout_marginHorizontal="60dp"
+        >
+    </Button>
+
+</LinearLayout>

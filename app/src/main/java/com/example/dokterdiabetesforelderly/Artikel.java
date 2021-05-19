@@ -1,6 +1,8 @@
 package com.example.dokterdiabetesforelderly;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,13 +12,23 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Artikel extends AppCompatActivity implements MenuItem.OnMenuItemClickListener{
     Button dropDownMenu;
+    private RecyclerView recyclerViewArtikel;
+    private ArrayList<ModelArtikel> listArtikel = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artikel);
+
+        recyclerViewArtikel = findViewById(R.id.listArtikel);
+        recyclerViewArtikel.setHasFixedSize(true);
+        listArtikel.addAll(ArtikelData.getListData());
+        showRecyclerListArtikel();
+
         //menu resource file dropdownartikel
         dropDownMenu = findViewById(R.id.ddMenuArtikel);
         dropDownMenu.setOnClickListener(new View.OnClickListener() {
@@ -47,11 +59,17 @@ public class Artikel extends AppCompatActivity implements MenuItem.OnMenuItemCli
         });
     }
 
+    private void showRecyclerListArtikel(){
+        recyclerViewArtikel.setLayoutManager(new LinearLayoutManager(this));
+        ArtikelAdapter artikelAdapter = new ArtikelAdapter(listArtikel);
+        recyclerViewArtikel.setAdapter(artikelAdapter);
+    }
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         return false;
     }
+
     public void back(View view) {
         Intent intent = new Intent(Artikel.this, MainMenu.class);
         startActivity(intent);

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dokter Diabetes for Elderly</string>
+    <string name="judul_artikel">Judul Artikel</string>
+    <string name="detail_artikel">Detail Artikel</string>
 </resources>

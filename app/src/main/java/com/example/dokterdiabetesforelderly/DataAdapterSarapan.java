@@ -1,11 +1,9 @@
 package com.example.dokterdiabetesforelderly;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,14 +18,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DataAdapter extends RecyclerView.Adapter<DataAdapter.viewHolder> {
+public class DataAdapterSarapan extends RecyclerView.Adapter<DataAdapterSarapan.viewHolder> {
     private Context context;
     private ArrayList<PoolData> dataList;
     DatabaseReference databaseReference;
     Map<String, Object> values = new HashMap<>();
 
     //fungsi declare adapter
-    public DataAdapter(Context myContext, ArrayList<PoolData> list){
+    public DataAdapterSarapan(Context myContext, ArrayList<PoolData> list){
         this.context = myContext;
         this.dataList = list;
     }

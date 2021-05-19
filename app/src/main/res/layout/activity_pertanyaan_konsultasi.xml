@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PertanyaanKonsultasi"
+    android:background="@color/basecolor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:onClick="back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#C70039"
+            android:src="@drawable/ic_baseline_navigate_before_24">
+        </ImageButton>
+        <TextView
+            android:onClick="back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingTop="20dp">
+        </TextView>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="30dp"
+            android:src="@drawable/logodokterdiabetes">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pertanyaan Konsultasi"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/backgroundmenu"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Masukan Pertanyaan"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/buatpertanyaankonsultasi"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:hint="Pertanyaan"
+            android:inputType="text"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="20sp">
+        </EditText>
+
+        <Button
+            android:id="@+id/buatpertanyaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#a9a9a9"
+            android:text="Buat Pertanyaan"
+            android:textColor="#000000">
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -24,12 +24,11 @@ public class Carbocalculator extends AppCompatActivity {
     private DatabaseReference mydb, mknsiang, mknmalam;
     DatabaseReference sarapanDB;
     //private ArrayList<PoolData> listArray;
-    //private ArrayList<GetDataIntent> data;
     private ArrayList<PoolData> listArray, listMakanSiang, listMakanMalam;
-    //private CarboCalAdapter adapter;
     private DataAdapterMknMalam makanMalam;
-    private DataAdapter sarapan;
+    private DataAdapterSarapan sarapan;
     private DataAdapterMknSiang makanSiang;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +83,7 @@ public class Carbocalculator extends AppCompatActivity {
 
                     listArray.add(poolData);
                 }
-                sarapan = new DataAdapter(getApplicationContext(),listArray);
+                sarapan = new DataAdapterSarapan(getApplicationContext(),listArray);
                 listSarapan.setAdapter(sarapan);
                 sarapan.notifyDataSetChanged();
             }
@@ -107,7 +106,7 @@ public class Carbocalculator extends AppCompatActivity {
                         PoolData poolData = dataSnapshot.getValue(PoolData.class);
                         listArray.add(poolData);
                     }
-                    sarapan = new DataAdapter(getApplicationContext(),listArray);
+                    sarapan = new DataAdapterSarapan(getApplicationContext(),listArray);
                     listSarapan.setAdapter(sarapan);
                     sarapan.notifyDataSetChanged();
                 }

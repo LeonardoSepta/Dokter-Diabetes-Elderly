@@ -14,17 +14,17 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
-public class HasilCarbocalculator extends AppCompatActivity {
+public class HasilGlukosa extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hasil_carbocalculator);
+        setContentView(R.layout.activity_hasil_glukosa);
         //drawChart();
-        BarChart barChart = (BarChart) findViewById(R.id.carboBarChart);
+        BarChart barChart = (BarChart) findViewById(R.id.glukosaBarChart);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(350f, 0));
+        entries.add(new BarEntry(160f, 0));
 
         BarDataSet barDataSet = new BarDataSet(entries, "Cells");
 
@@ -33,21 +33,21 @@ public class HasilCarbocalculator extends AppCompatActivity {
 
         BarData data = new BarData(labels, barDataSet);
         barChart.setData(data); // set the data and list of labels into chart
-        barChart.setDescription("Carbo Normal");
+        barChart.setDescription("Kadar Glukosa Normal");
         barChart.setDescriptionTextSize(20);
-//        barDataSet.setColor(Integer.parseInt("#C70039"));
+        //barDataSet.setColor(Integer.parseInt("#C70039"));
         barDataSet.setValueTextSize(20);
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         barChart.animateY(3000);
     }
 
     public void back(View view) {
-        Intent intent = new Intent(HasilCarbocalculator.this, MainMenu.class);
+        Intent intent = new Intent(HasilGlukosa.this, MainMenu.class);
         startActivity(intent);
     }
 
-    public void dataCarboCal(View view) {
-        Intent intent = new Intent(HasilCarbocalculator.this, Carbocalculator.class);
+    public void dataGlukosa(View view) {
+        Intent intent = new Intent(HasilGlukosa.this, Glukosa.class);
         startActivity(intent);
     }
 }

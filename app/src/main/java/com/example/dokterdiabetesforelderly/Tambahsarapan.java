@@ -19,14 +19,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Tambahsarapan extends AppCompatActivity implements DataAdapter.OnRecycleListener{
+public class Tambahsarapan extends AppCompatActivity implements DataAdapterSarapan.OnRecycleListener{
     private RecyclerView sarapan;
     private DatabaseReference mydb,dbDataSarapan;
     //private ArrayList<PoolData> listArray;
     //private ArrayList<GetDataIntent> data;
     private ArrayList<PoolData> listArray;
     //private CarboCalAdapter adapter;
-    private DataAdapter sarapanAdapter;
+    private DataAdapterSarapan sarapanAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class Tambahsarapan extends AppCompatActivity implements DataAdapter.OnRe
 
                     listArray.add(poolData);
                 }
-                sarapanAdapter = new DataAdapter(getApplicationContext(),listArray);
+                sarapanAdapter = new DataAdapterSarapan(getApplicationContext(),listArray);
                 sarapan.setAdapter(sarapanAdapter);
                 sarapanAdapter.notifyDataSetChanged();
             }

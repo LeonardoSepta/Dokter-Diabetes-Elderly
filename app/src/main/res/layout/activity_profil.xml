@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profil"
+    android:orientation="vertical"
+    android:background="#C70039">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:src="@drawable/logodokterdiabetes">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PROFIL"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center"
+            android:paddingBottom="10dp">
+        </TextView>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/bottomnavcolor"
+        app:menu="@menu/menunavigasi"
+        app:itemIconTint="@drawable/state_bottomnav"
+        app:itemTextColor="@drawable/state_bottomnav"
+        >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/backgroundmenu"
+        android:orientation="horizontal">
+
+        <!--<androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>-->
+        <ImageButton
+            android:onClick="exit"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_exit_basecolor"/>
+        <TextView
+            android:onClick="exit"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="45dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXIT"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

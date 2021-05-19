@@ -1,6 +1,8 @@
 package com.example.dokterdiabetesforelderly;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,13 +12,23 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ArtikelInfoDiabetes extends AppCompatActivity implements MenuItem.OnMenuItemClickListener {
     Button dropDownMenu;
+    private RecyclerView recyclerViewArtikel;
+    private ArrayList<ModelArtikel> listArtikel = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artikel_info_diabetes);
+
+        recyclerViewArtikel = findViewById(R.id.listArtikelInfoDiabetes);
+        recyclerViewArtikel.setHasFixedSize(true);
+        listArtikel.addAll(ArtikelInfoDiabetesData.getListData());
+        showRecyclerListArtikel();
+
         //menu resource file dropdownartikel
         dropDownMenu = findViewById(R.id.ddMenuArtikelInfoDiabetes);
         dropDownMenu.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +57,12 @@ public class ArtikelInfoDiabetes extends AppCompatActivity implements MenuItem.O
                 popupMenu.show();
             }
         });
+    }
+
+    private void showRecyclerListArtikel(){
+        recyclerViewArtikel.setLayoutManager(new LinearLayoutManager(this));
+        ArtikelAdapter artikelAdapter = new ArtikelAdapter(listArtikel);
+        recyclerViewArtikel.setAdapter(artikelAdapter);
     }
 
     @Override

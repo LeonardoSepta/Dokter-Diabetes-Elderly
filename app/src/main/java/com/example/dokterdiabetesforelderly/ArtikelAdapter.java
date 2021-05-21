@@ -1,5 +1,7 @@
 package com.example.dokterdiabetesforelderly;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +18,15 @@ import java.util.ArrayList;
 
 public class ArtikelAdapter extends RecyclerView.Adapter<ArtikelAdapter.ListViewHolder> {
     private ArrayList<ModelArtikel> listArtikel;
+    Context context;
 
-    public ArtikelAdapter(ArrayList<ModelArtikel> list){
+    public ArtikelAdapter(/*Context context,*/ ArrayList<ModelArtikel> list){
+        //this.context = context;
         this.listArtikel = list;
     }
+
+
+
 
     @NonNull
     @Override
@@ -34,6 +41,13 @@ public class ArtikelAdapter extends RecyclerView.Adapter<ArtikelAdapter.ListView
         Glide.with(holder.itemView.getContext()).load(artikel.getPhoto()).apply(new RequestOptions().override(55,55)).into(holder.imgPhoto);
         holder.judulTextArtikel.setText(artikel.getJudul());
         holder.detailTextArtikel.setText(artikel.getDetail());
+
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(holder.itemView.getContext(), DetailArtikel.class);
+            intent.putExtra("item_extra",listArtikel.get(position));
+            holder.itemView.getContext().startActivity(intent);
+        });
     }
 
     @Override

@@ -29,7 +29,7 @@ public class ArtikelKesehatan extends AppCompatActivity implements MenuItem.OnMe
         listArtikel.addAll(ArtikelKesehatanData.getListData());
         showRecyclerListArtikel();
 
-        //menu resource file dropdownartikel
+        /*//menu resource file dropdownartikel
         dropDownMenu = findViewById(R.id.ddMenuArtikelKesehatan);
         dropDownMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,13 +56,15 @@ public class ArtikelKesehatan extends AppCompatActivity implements MenuItem.OnMe
                 });
                 popupMenu.show();
             }
-        });
+        });*/
     }
 
     private void showRecyclerListArtikel(){
         recyclerViewArtikel.setLayoutManager(new LinearLayoutManager(this));
         ArtikelAdapter artikelAdapter = new ArtikelAdapter(listArtikel);
         recyclerViewArtikel.setAdapter(artikelAdapter);
+
+
     }
 
     @Override

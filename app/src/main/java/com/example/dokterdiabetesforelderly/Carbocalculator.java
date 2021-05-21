@@ -28,6 +28,7 @@ public class Carbocalculator extends AppCompatActivity {
     private DataAdapterMknMalam makanMalam;
     private DataAdapterSarapan sarapan;
     private DataAdapterMknSiang makanSiang;
+    private CarbocalculatorAdapter carboAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,16 +77,17 @@ public class Carbocalculator extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 CheckDataSarapan();
                 for (DataSnapshot dataSarapan:snapshot.getChildren()){
-                    PoolData poolData = dataSarapan.getValue(PoolData.class) ;
+                    PoolData poolData = new PoolData();
+                    //PoolData poolData = dataSarapan.getValue(PoolData.class) ;
                     //PoolData poolData = dataSarapan.getValue(PoolData.class);
                     poolData.setNama(dataSarapan.child("nama").getValue().toString());
                     poolData.setCarbo(dataSarapan.child("carbo").getValue().toString());
 
                     listArray.add(poolData);
                 }
-                sarapan = new DataAdapterSarapan(getApplicationContext(),listArray);
-                listSarapan.setAdapter(sarapan);
-                sarapan.notifyDataSetChanged();
+                carboAdapter = new CarbocalculatorAdapter(getApplicationContext(),listArray);
+                listSarapan.setAdapter(carboAdapter);
+                carboAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -98,17 +100,17 @@ public class Carbocalculator extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    String karbo = snapshot.child("carbo").getValue(String.class);
+                    String carbo = snapshot.child("carbo").getValue(String.class);
                     String nama = snapshot.child("nama").getValue(String.class);
-                    Log.d("TAG", "sarapan carbo"+karbo);
+                    Log.d("TAG", "sarapan carbo"+carbo);
                     Log.d("TAG", "sarapan nama"+nama);
                     for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                         PoolData poolData = dataSnapshot.getValue(PoolData.class);
                         listArray.add(poolData);
                     }
-                    sarapan = new DataAdapterSarapan(getApplicationContext(),listArray);
-                    listSarapan.setAdapter(sarapan);
-                    sarapan.notifyDataSetChanged();
+                    carboAdapter = new CarbocalculatorAdapter(getApplicationContext(),listArray);
+                    listSarapan.setAdapter(carboAdapter);
+                    carboAdapter.notifyDataSetChanged();
                 }
             }
 
@@ -122,8 +124,8 @@ public class Carbocalculator extends AppCompatActivity {
     private void CheckDataSarapan() {
         if (listArray != null){
             listArray.clear();
-            if (sarapan != null){
-                sarapan.notifyDataSetChanged();
+            if (carboAdapter != null){
+                carboAdapter.notifyDataSetChanged();
             }
         }
         listArray = new ArrayList<>();
@@ -143,9 +145,9 @@ public class Carbocalculator extends AppCompatActivity {
 
                     listMakanMalam.add(poolData);
                 }
-                makanMalam = new DataAdapterMknMalam(getApplicationContext(),listMakanMalam);
-                listMknMlm.setAdapter(makanMalam);
-                makanMalam.notifyDataSetChanged();
+                carboAdapter = new CarbocalculatorAdapter(getApplicationContext(),listMakanMalam);
+                listMknMlm.setAdapter(carboAdapter);
+                carboAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -158,8 +160,8 @@ public class Carbocalculator extends AppCompatActivity {
     private void CheckDataMknMalam() {
         if (listMakanMalam != null){
             listMakanMalam.clear();
-            if (makanMalam != null){
-                makanMalam.notifyDataSetChanged();
+            if (carboAdapter != null){
+                carboAdapter.notifyDataSetChanged();
             }
         }
         listMakanMalam = new ArrayList<>();
@@ -179,9 +181,9 @@ public class Carbocalculator extends AppCompatActivity {
 
                     listMakanSiang.add(poolData);
                 }
-                makanSiang = new DataAdapterMknSiang(getApplicationContext(),listMakanSiang);
-                listMknSiang.setAdapter(makanSiang);
-                makanSiang.notifyDataSetChanged();
+                carboAdapter = new CarbocalculatorAdapter(getApplicationContext(),listMakanSiang);
+                listMknSiang.setAdapter(carboAdapter);
+                carboAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -194,8 +196,8 @@ public class Carbocalculator extends AppCompatActivity {
     private void CheckDataMknSiang() {
         if (listMakanSiang != null){
             listMakanSiang.clear();
-            if (makanSiang != null){
-                makanSiang.notifyDataSetChanged();
+            if (carboAdapter != null){
+                carboAdapter.notifyDataSetChanged();
             }
         }
         listMakanSiang = new ArrayList<>();

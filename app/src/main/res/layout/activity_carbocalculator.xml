@@ -109,7 +109,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/backgroundlistcarbo">
                 <TextView
                     android:paddingLeft="8dp"
                     android:layout_width="wrap_content"
@@ -128,7 +129,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="15dp">
                 <Button
                     android:onClick="masukLayoutSarapan"
                     android:layout_width="wrap_content"
@@ -136,19 +138,20 @@
                     android:layout_marginStart="40dp"
                     android:backgroundTint="#808080"
                     android:textColor="@color/white"
-                    android:text="Tambah Data"/>
-                <Button
+                    android:text="Tambah Data Sarapan + "/>
+                <!--<Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:backgroundTint="#808080"
                     android:textColor="@color/white"
-                    android:text="Hapus Data"/>
+                    android:text="Hapus Data"/>-->
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/backgroundlistcarbo">
                 <TextView
                     android:paddingLeft="8dp"
                     android:layout_width="wrap_content"
@@ -167,7 +170,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="15dp">
                 <Button
                     android:onClick="masukLayoutMknSiang"
                     android:layout_width="wrap_content"
@@ -175,19 +179,20 @@
                     android:layout_marginStart="40dp"
                     android:backgroundTint="#808080"
                     android:textColor="@color/white"
-                    android:text="Tambah Data"/>
-                <Button
+                    android:text="Tambah Data Makan Siang + "/>
+                <!--<Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:backgroundTint="#808080"
                     android:textColor="@color/white"
-                    android:text="Hapus Data"/>
+                    android:text="Hapus Data"/>-->
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/backgroundlistcarbo">
                 <TextView
                     android:paddingLeft="8dp"
                     android:layout_width="wrap_content"
@@ -206,7 +211,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="15dp">
                 <Button
                     android:onClick="masukLayoutMknMalam"
                     android:layout_width="wrap_content"
@@ -214,14 +220,14 @@
                     android:layout_marginStart="40dp"
                     android:backgroundTint="#808080"
                     android:textColor="@color/white"
-                    android:text="Tambah Data"/>
-                <Button
+                    android:text="Tambah Data Makan Malam + "/>
+                <!--<Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:backgroundTint="#808080"
                     android:textColor="@color/white"
-                    android:text="Hapus Data"/>
+                    android:text="Hapus Data"/>-->
             </LinearLayout>
 
             <LinearLayout

@@ -98,7 +98,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void OpenArtikel (){
-        Intent intent = new Intent(MainMenu.this, Artikel.class);
+        Intent intent = new Intent(MainMenu.this, ListKategoriArtikel.class);
         startActivity(intent);
     }
 

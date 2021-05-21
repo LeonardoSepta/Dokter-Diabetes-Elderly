@@ -29,7 +29,7 @@ public class ArtikelInfoDiabetes extends AppCompatActivity implements MenuItem.O
         listArtikel.addAll(ArtikelInfoDiabetesData.getListData());
         showRecyclerListArtikel();
 
-        //menu resource file dropdownartikel
+        /*//menu resource file dropdownartikel
         dropDownMenu = findViewById(R.id.ddMenuArtikelInfoDiabetes);
         dropDownMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +56,7 @@ public class ArtikelInfoDiabetes extends AppCompatActivity implements MenuItem.O
                 });
                 popupMenu.show();
             }
-        });
+        });*/
     }
 
     private void showRecyclerListArtikel(){

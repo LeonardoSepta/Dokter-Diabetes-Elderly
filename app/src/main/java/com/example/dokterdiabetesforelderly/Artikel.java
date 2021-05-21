@@ -4,17 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Artikel extends AppCompatActivity implements MenuItem.OnMenuItemClickListener{
+public class Artikel extends AppCompatActivity {
     Button dropDownMenu;
     private RecyclerView recyclerViewArtikel;
     private ArrayList<ModelArtikel> listArtikel = new ArrayList<>();
@@ -26,11 +28,14 @@ public class Artikel extends AppCompatActivity implements MenuItem.OnMenuItemCli
 
         recyclerViewArtikel = findViewById(R.id.listArtikel);
         recyclerViewArtikel.setHasFixedSize(true);
+
         listArtikel.addAll(ArtikelData.getListData());
         showRecyclerListArtikel();
 
+
+
         //menu resource file dropdownartikel
-        dropDownMenu = findViewById(R.id.ddMenuArtikel);
+       /* dropDownMenu = findViewById(R.id.ddMenuArtikel);
         dropDownMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,19 +61,30 @@ public class Artikel extends AppCompatActivity implements MenuItem.OnMenuItemCli
                 });
                 popupMenu.show();
             }
-        });
+        });*/
     }
 
     private void showRecyclerListArtikel(){
         recyclerViewArtikel.setLayoutManager(new LinearLayoutManager(this));
         ArtikelAdapter artikelAdapter = new ArtikelAdapter(listArtikel);
         recyclerViewArtikel.setAdapter(artikelAdapter);
+
+
+        /*artikelAdapter.setOnItemCLickCallback(new artikelAdapter.OnItemClickCallBack(){
+
+           @Override
+           public void onItemClicked(ArtikelAdapter artikelAdapter1){
+               Intent moveIntent = new Intent(Artikel.this, DetailArtikel.class);
+           }
+        });*/
+
+
     }
 
-    @Override
+   /* @Override
     public boolean onMenuItemClick(MenuItem item) {
         return false;
-    }
+    }*/
 
     public void back(View view) {
         Intent intent = new Intent(Artikel.this, MainMenu.class);

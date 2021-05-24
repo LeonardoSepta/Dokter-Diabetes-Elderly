@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
 import com.example.dokterdiabetesforelderly.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,7 +31,9 @@ public class Glukosa extends AppCompatActivity {
 
     }
     public void back(View view) {
-        finish();
+        Intent intent = new Intent(Glukosa.this, MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     public EditText getNumberGlukosa() {

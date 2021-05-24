@@ -213,8 +213,10 @@ public class Carbocalculator extends AppCompatActivity {
 
 
     public void back(View view) {
-        Intent intent = new Intent(Carbocalculator.this, MainMenu.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(Carbocalculator.this, MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);*/
+        finish();
     }
 
     public void masukLayoutMknMalam(View view) {

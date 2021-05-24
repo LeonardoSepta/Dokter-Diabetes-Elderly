@@ -73,6 +73,7 @@ public class ArtikelInfoDiabetes extends AppCompatActivity implements MenuItem.O
 
     public void back(View view) {
         Intent intent = new Intent(ArtikelInfoDiabetes.this, MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
 
     }

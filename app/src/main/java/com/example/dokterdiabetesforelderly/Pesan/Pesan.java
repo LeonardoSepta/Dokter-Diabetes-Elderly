@@ -39,14 +39,18 @@ public class Pesan extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.beranda:
-                        startActivity(new Intent(Pesan.this, MainMenu.class));
+                        Intent intentberanda = new Intent(Pesan.this, MainMenu.class);
+                        intentberanda.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentberanda);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.pesan:
                         return true;
                     case R.id.profil:
 //                     Intent Profil = new Intent(Mainmenu.this, Profil.class);
-                        startActivity(new Intent(Pesan.this, Profil.class));
+                        Intent intentprofil = new Intent(Pesan.this, Profil.class);
+                        intentprofil.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentprofil);
                         overridePendingTransition(0,0);
                         return true;
                 }

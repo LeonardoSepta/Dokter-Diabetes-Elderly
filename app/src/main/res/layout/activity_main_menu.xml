@@ -8,10 +8,7 @@
     android:background="#c70039"
     android:orientation="vertical"
     >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -25,23 +22,11 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_vertical|center_horizontal"
-                    android:src="@drawable/logodokterdiabetes">
+                    android:src="@drawable/logodokterdiabetes"
+                    android:contentDescription="@string/todo">
 
                 </ImageView>
 
-                <!--
-                <TextView
-                    android:layout_width="220dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="0dp"
-                    android:text="Dokter Diabetes"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:textSize="30sp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                        >
-                </TextView>-->
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -59,10 +44,7 @@
                     >
                 </TextView>
             </LinearLayout>
-            <!--            <FrameLayout-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottom_nav"
                 android:layout_width="match_parent"
@@ -75,7 +57,7 @@
                 >
 
             </com.google.android.material.bottomnavigation.BottomNavigationView>
-            <!--            </FrameLayout>-->
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,10 +66,13 @@
                 android:background="@drawable/backgroundmenu"
                 android:id="@+id/menu"
                 >
-
-                <GridLayout
+                <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    >
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:columnCount="2"
                     android:rowCount="5"
                     >
@@ -97,16 +82,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_row="0"
-                        android:layout_rowWeight="1"
                         android:layout_column="0"
+                        android:layout_rowWeight="1"
                         android:layout_columnWeight="1"
-
                         android:layout_gravity="fill"
                         android:layout_margin="8dp"
                         app:cardBackgroundColor="#808080"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        >
+                        tools:targetApi="lollipop">
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -119,13 +103,14 @@
                                 android:layout_width="90dp"
                                 android:layout_height="90dp"
                                 android:layout_marginTop="10dp"
-                                android:src="@drawable/iconfinder_doctor_asian">
+                                android:src="@drawable/iconfinder_doctor_asian"
+                                android:contentDescription="@string/todo">
                             </ImageView>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                android:text="Konsultasi"
+                                android:text="@string/konsultasi"
                                 android:textColor="#000000"
                                 android:textSize="20sp"
                                 android:textStyle="bold">
@@ -137,7 +122,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/menuArtikel"
-                        android:onClick="menuArtikel"
                         tools:ignore="OnClick"
                         android:layout_row="0"
                         android:layout_rowWeight="1"
@@ -148,7 +132,7 @@
                         app:cardBackgroundColor="#808080"
                         app:cardCornerRadius="8dp"
                         android:elevation="8dp"
-                        >
+                        tools:targetApi="lollipop">
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -160,12 +144,12 @@
                                 android:layout_height="90dp"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/book_grey"
-                                ></ImageView>
+                                android:contentDescription="@string/todo" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                android:text="Artikel"
+                                android:text="@string/artikel"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold"/>
@@ -185,7 +169,8 @@
                         android:layout_margin="8dp"
                         app:cardBackgroundColor="#808080"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        tools:targetApi="lollipop">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -198,8 +183,7 @@
                                 android:layout_height="90dp"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/iconfinder_diabetes_tester_sugar_blood_medical_6217235"
-
-                                ></ImageView>
+                                android:contentDescription="@string/todo" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -224,7 +208,7 @@
                         app:cardBackgroundColor="#808080"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        >
+                        tools:targetApi="lollipop">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -238,13 +222,13 @@
                                 android:layout_height="90dp"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/calculator_grey3"
-                                ></ImageView>
+                                />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                android:text="Carbo Calculator"
+                                android:text="@string/carbo_calculator"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold"/>
@@ -265,7 +249,8 @@
                         android:layout_margin="8dp"
                         app:cardBackgroundColor="#808080"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        tools:targetApi="lollipop">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -279,13 +264,13 @@
                                 android:layout_height="90dp"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/scales"
-                                ></ImageView>
+                                />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                android:text="Berat Badan(BMI)"
+                                android:text="@string/berat_badan_bmi"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -306,7 +291,8 @@
                         android:layout_margin="8dp"
                         app:cardBackgroundColor="#808080"
                         app:cardCornerRadius="8dp"
-                        android:elevation="8dp">
+                        android:elevation="8dp"
+                        tools:targetApi="lollipop">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -320,13 +306,55 @@
                                 android:layout_height="90dp"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/food_dome2"
-                                ></ImageView>
+                                android:contentDescription="@string/todo" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                android:text="Resep"
+                                android:text="@string/resep"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Shop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="3"
+                        android:layout_column="0"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:layout_margin="8dp"
+                        app:cardBackgroundColor="#808080"
+                        app:cardCornerRadius="8dp"
+                        android:elevation="8dp"
+                        tools:targetApi="lollipop">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/iconfinder_cart_grey"
+                                android:contentDescription="@string/todo" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/shop"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold"/>
@@ -337,8 +365,10 @@
 
                 </GridLayout>
 
+                </ScrollView>
+
             </LinearLayout>
+
         </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>

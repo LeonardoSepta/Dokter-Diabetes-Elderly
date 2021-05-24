@@ -75,6 +75,7 @@ public class ArtikelKesehatan extends AppCompatActivity implements MenuItem.OnMe
 
     public void back(View view) {
         Intent intent = new Intent(ArtikelKesehatan.this, MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
 
     }

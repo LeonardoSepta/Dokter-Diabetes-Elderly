@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
 import com.example.dokterdiabetesforelderly.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,7 +21,9 @@ public class BeratBadan extends AppCompatActivity {
         setContentView(R.layout.activity_berat_badan);
     }
     public void back(View view) {
-        finish();
+        Intent intent = new Intent(BeratBadan.this, MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
     }
 
     public void SimpanBB(View view) {

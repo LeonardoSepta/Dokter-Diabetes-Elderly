@@ -2,4 +2,12 @@
     <string name="app_name">Dokter Diabetes for Elderly</string>
     <string name="judul_artikel">Judul Artikel</string>
     <string name="detail_artikel">Detail Artikel</string>
+    <string name="glukosa">Glukosa</string>
+    <string name="shop">Shop</string>
+    <string name="resep">Resep</string>
+    <string name="berat_badan_bmi">Berat Badan(BMI)</string>
+    <string name="carbo_calculator">Carbo Calculator</string>
+    <string name="todo">TODO</string>
+    <string name="artikel">Artikel</string>
+    <string name="konsultasi">Konsultasi</string>
 </resources>

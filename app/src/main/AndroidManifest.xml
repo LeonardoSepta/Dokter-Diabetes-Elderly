@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DokterDiabetesForElderly">
-        <activity android:name=".LoginUmum"></activity>
+        <activity android:name=".StepAfterMainMenu.Shop"></activity>
+        <activity android:name=".LoginUmum" />
         <activity android:name=".PilihanLogin" />
         <activity android:name=".Konsultasi.DetailKonsultasi" />
         <activity android:name=".Pesan.DetailPesan" />

@@ -76,6 +76,7 @@ public class Artikel extends AppCompatActivity {
 
     public void back(View view) {
         Intent intent = new Intent(Artikel.this, MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
 
     }

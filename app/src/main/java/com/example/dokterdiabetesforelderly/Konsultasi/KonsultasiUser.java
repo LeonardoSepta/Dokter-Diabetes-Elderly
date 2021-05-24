@@ -49,10 +49,12 @@ public class KonsultasiUser extends AppCompatActivity {
 
     public void OpenPertanyaanKonsultasi (){
         Intent intent = new Intent(KonsultasiUser.this, PertanyaanKonsultasi.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
     public void back(View view) {
         Intent intent = new Intent(KonsultasiUser.this, MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 }

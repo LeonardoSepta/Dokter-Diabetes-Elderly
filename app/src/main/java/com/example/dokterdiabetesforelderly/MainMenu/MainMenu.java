@@ -15,10 +15,11 @@ import com.example.dokterdiabetesforelderly.StepAfterMainMenu.DataBeratBadan;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.DataGlukosa;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.Datacarbocalculator;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.ListKategoriArtikel;
+import com.example.dokterdiabetesforelderly.StepAfterMainMenu.Shop;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainMenu extends AppCompatActivity {
-    private CardView Artikel, BeratBadan, CarboCalculator, Glukosa, Konsultasi, Loading, Login, Registrasi, Resep;
+    private CardView Artikel, BeratBadan, CarboCalculator, Glukosa, Konsultasi, Loading, Login, Registrasi, Resep, Shop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +36,28 @@ public class MainMenu extends AppCompatActivity {
                     case R.id.beranda:
                         return true;
                     case R.id.pesan:
-                        startActivity(new Intent(MainMenu.this, Pesan.class));
+                        Intent intentpesan = new Intent(MainMenu.this, Pesan.class);
+                        intentpesan.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentpesan);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.profil:
 //                     Intent Profil = new Intent(Mainmenu.this, Profil.class);
-                        startActivity(new Intent(MainMenu.this, Profil.class));
+                        Intent intentprofil = new Intent(MainMenu.this, Profil.class);
+                        intentprofil.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentprofil);
                         overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
+            }
+        });
+
+        Shop = (CardView) findViewById(R.id.Shop);
+        Shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenShop();
             }
         });
 
@@ -100,31 +113,43 @@ public class MainMenu extends AppCompatActivity {
 
     public void OpenKonsultasi (){
         Intent intent = new Intent(MainMenu.this, com.example.dokterdiabetesforelderly.Konsultasi.Konsultasi.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
     public void OpenArtikel (){
         Intent intent = new Intent(MainMenu.this, ListKategoriArtikel.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
     public void OpenResep (){
         Intent intent = new Intent( MainMenu.this, com.example.dokterdiabetesforelderly.Resep.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
 
     public void OpenCarboCalculator (){
         Intent intent = new Intent(MainMenu.this, Datacarbocalculator.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
     public void OpenBeratBadan (){
         Intent intent = new Intent(MainMenu.this, DataBeratBadan.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
     public void OpenGlukosa (){
         Intent intent = new Intent(MainMenu.this, DataGlukosa.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void OpenShop (){
+        Intent intent = new Intent(MainMenu.this, Shop.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 }

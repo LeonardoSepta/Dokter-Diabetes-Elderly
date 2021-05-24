@@ -45,6 +45,7 @@ public class HasilCarbocalculator extends AppCompatActivity {
 
     public void back(View view) {
         Intent intent = new Intent(HasilCarbocalculator.this, MainMenu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 

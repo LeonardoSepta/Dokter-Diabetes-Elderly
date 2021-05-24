@@ -2,6 +2,7 @@ package com.example.dokterdiabetesforelderly.Artikel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -33,6 +34,8 @@ public class DetailArtikel extends AppCompatActivity {
     }
     
     public void back(View view) {
+
         finish();
+        //finishActivity(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NO_HISTORY);
     }
 }

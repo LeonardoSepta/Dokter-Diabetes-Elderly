@@ -35,6 +35,7 @@ public class Login extends AppCompatActivity {
                 if (numberAkun.getText().toString().equals("081804109331")&&passwordAkun.getText().toString().equals("123456")){
                     Toast.makeText(Login.this,"Login Berhasil",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(Login.this, MainMenu.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }else{
                     Toast.makeText(Login.this,"Login Gagal, Periksa kembali username dan password anda",Toast.LENGTH_LONG).show();

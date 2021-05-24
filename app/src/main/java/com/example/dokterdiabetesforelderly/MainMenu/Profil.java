@@ -31,11 +31,15 @@ public class Profil extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.beranda:
-                        startActivity(new Intent(Profil.this, MainMenu.class));
+                        Intent intentberanda = new Intent(Profil.this, MainMenu.class);
+                        intentberanda.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentberanda);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.pesan:
-                        startActivity(new Intent(Profil.this, Pesan.class));
+                        Intent intentpesan = new Intent(Profil.this, Pesan.class);
+                        intentpesan.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentpesan);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.profil:

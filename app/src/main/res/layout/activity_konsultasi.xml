@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Konsultasi"
+    tools:context=".Konsultasi.Konsultasi"
     android:background="#C70039"
     android:orientation="vertical">
 
@@ -60,7 +60,6 @@
             app:menu="@menu/menukonsultasi"
             app:itemIconTint="@drawable/state_bottomnav"
             app:itemTextColor="@drawable/state_bottomnav"
-
             >
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
@@ -73,13 +72,13 @@
         android:orientation="vertical"
         android:background="@drawable/backgroundmenu"
         >
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:id="@+id/listKonsultasi"
             >
-        </ListView>
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
     <Button

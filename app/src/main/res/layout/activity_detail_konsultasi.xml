@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Konsultasi.DetailKonsultasi"
+    android:background="@color/basecolor"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:onClick="back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#C70039"
+            android:src="@drawable/ic_baseline_navigate_before_24">
+        </ImageButton>
+        <TextView
+            android:onClick="back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingTop="20dp">
+        </TextView>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_detail_Konsultasi"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="#808080"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="20dp"
+        >
+    </ImageView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundmenu">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textJudulKonsultasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:text="Judul Konsultasi"
+                android:layout_marginLeft="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Responden : "
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:paddingRight="10dp"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/textIdKonsultasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="id konsultasi"
+                        android:textSize="16sp"
+                        android:textColor="@color/darkgrey"
+                        />
+                </LinearLayout>
+
+            <TextView
+                android:id="@+id/textDetailKonsultasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="detail konsultasi"
+                android:textColor="@color/darkgrey"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jawaban Dokter:"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:id="@+id/textJawabanKonsultasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jawaban konsultasi"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:background="@drawable/backgroundbutton"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

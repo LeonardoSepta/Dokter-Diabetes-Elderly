@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dokterdiabetesforelderly" >
+    package="com.example.dokterdiabetesforelderly">
 
     <application
         android:allowBackup="true"
@@ -8,34 +8,37 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DokterDiabetesForElderly" >
-        <activity android:name=".ListKategoriArtikel" >
-        </activity>
-        <activity android:name=".DetailArtikel" />
+        android:theme="@style/Theme.DokterDiabetesForElderly">
+        <activity android:name=".LoginUmum"></activity>
+        <activity android:name=".PilihanLogin" />
+        <activity android:name=".Konsultasi.DetailKonsultasi" />
+        <activity android:name=".Pesan.DetailPesan" />
+        <activity android:name=".StepAfterMainMenu.ListKategoriArtikel" />
+        <activity android:name=".Artikel.DetailArtikel" />
         <activity android:name=".Resep" />
         <activity android:name=".Login" />
-        <activity android:name=".DataGlukosa" />
-        <activity android:name=".Profil" />
-        <activity android:name=".Pesan" />
-        <activity android:name=".DataBeratBadan" />
-        <activity android:name=".HasilBeratBadan" />
-        <activity android:name=".BeratBadan" />
-        <activity android:name=".HasilGlukosa" />
-        <activity android:name=".KonsultasiUser" />
-        <activity android:name=".PertanyaanKonsultasi" />
-        <activity android:name=".Konsultasi" />
-        <activity android:name=".Glukosa" />
-        <activity android:name=".HasilCarbocalculator" />
-        <activity android:name=".ArtikelInfoDiabetes" />
-        <activity android:name=".ArtikelKesehatan" />
-        <activity android:name=".Artikel" />
-        <activity android:name=".Tambahmknmalam" />
-        <activity android:name=".Tambahmknsiang" />
-        <activity android:name=".Tambahsarapan" />
-        <activity android:name=".Carbocalculator" />
-        <activity android:name=".Datacarbocalculator" />
-        <activity android:name=".MainMenu" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".StepAfterMainMenu.DataGlukosa" />
+        <activity android:name=".MainMenu.Profil" />
+        <activity android:name=".Pesan.Pesan" />
+        <activity android:name=".StepAfterMainMenu.DataBeratBadan" />
+        <activity android:name=".BeratBadanBMI.HasilBeratBadan" />
+        <activity android:name=".BeratBadanBMI.BeratBadan" />
+        <activity android:name=".Glukosa.HasilGlukosa" />
+        <activity android:name=".Konsultasi.KonsultasiUser" />
+        <activity android:name=".Konsultasi.PertanyaanKonsultasi" />
+        <activity android:name=".Konsultasi.Konsultasi" />
+        <activity android:name=".Glukosa.Glukosa" />
+        <activity android:name=".CarboCalculator.HasilCarbocalculator" />
+        <activity android:name=".Artikel.ArtikelInfoDiabetes" />
+        <activity android:name=".Artikel.ArtikelKesehatan" />
+        <activity android:name=".Artikel.Artikel" />
+        <activity android:name=".CarboCalculator.TambahDataCarbo.Tambahmknmalam" />
+        <activity android:name=".CarboCalculator.TambahDataCarbo.Tambahmknsiang" />
+        <activity android:name=".CarboCalculator.TambahDataCarbo.Tambahsarapan" />
+        <activity android:name=".CarboCalculator.Carbocalculator" />
+        <activity android:name=".StepAfterMainMenu.Datacarbocalculator" />
+        <activity android:name=".MainMenu.MainMenu" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
                 finish();
             }
         }, 2000L);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profil"
+    tools:context=".MainMenu.Profil"
     android:orientation="vertical"
     android:background="#C70039">
 
@@ -55,31 +55,55 @@
         android:layout_height="500dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/backgroundmenu"
-        android:orientation="horizontal">
-
-        <!--<androidx.recyclerview.widget.RecyclerView
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/backgroundbutton">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_baseline_account_circle_24"
+            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="081804109331"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="30dp"
+                />
+        </LinearLayout>
 
-        </androidx.recyclerview.widget.RecyclerView>-->
-        <ImageButton
-            android:onClick="exit"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_exit_basecolor"/>
-        <TextView
-            android:onClick="exit"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="45dp"
+        <LinearLayout
+            android:onClick="exitApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EXIT"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            />
-
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/backgroundbutton">
+            <ImageButton
+                android:layout_marginLeft="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_exit_basecolor"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="KELUAR AKUN"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                />
+        </LinearLayout>
 
     </LinearLayout>
 

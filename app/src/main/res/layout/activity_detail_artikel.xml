@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailArtikel"
+    tools:context=".Artikel.DetailArtikel"
     android:background="@color/basecolor"
     android:orientation="vertical">
     <LinearLayout
@@ -61,14 +61,17 @@
                 android:textStyle="bold"
                 android:layout_marginTop="20dp"
                 android:text="@string/judul_artikel"
-                android:layout_marginLeft="20dp"/>
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                />
 
             <TextView
                 android:id="@+id/textDetailArtikel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/detail_artikel"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:textColor="@color/darkgrey"/>
 
         </LinearLayout>
     </ScrollView>

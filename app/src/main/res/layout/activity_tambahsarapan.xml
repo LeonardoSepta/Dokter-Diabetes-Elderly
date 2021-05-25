@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CarboCalculator.TambahDataCarbo.Tambahsarapan"
-    android:background="#c70039"
+    android:background="@color/basecolor"
     android:orientation="vertical"
     >
     <LinearLayout
@@ -17,14 +17,15 @@
             android:onClick="back"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:backgroundTint="#C70039"
-            android:src="@drawable/ic_baseline_navigate_before_24">
+            android:backgroundTint="@color/basecolor"
+            android:src="@drawable/ic_baseline_navigate_before_24"
+            tools:targetApi="lollipop">
         </ImageButton>
         <TextView
             android:onClick="back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kembali"
+            android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:paddingTop="20dp">
@@ -52,7 +53,11 @@
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:background="@drawable/backgroundmenu"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+       <!-- <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

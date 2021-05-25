@@ -19,7 +19,7 @@ import com.example.dokterdiabetesforelderly.StepAfterMainMenu.Shop;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainMenu extends AppCompatActivity {
-    private CardView Artikel, BeratBadan, CarboCalculator, Glukosa, Konsultasi, Loading, Login, Registrasi, Resep, Shop;
+    private CardView Artikel, BeratBadan, CarboCalculator, Glukosa, Konsultasi, Resep, Shop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,7 +124,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void OpenResep (){
-        Intent intent = new Intent( MainMenu.this, com.example.dokterdiabetesforelderly.Resep.class);
+        Intent intent = new Intent( MainMenu.this, com.example.dokterdiabetesforelderly.Resep.Resep.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

@@ -10,4 +10,7 @@
     <string name="todo">TODO</string>
     <string name="artikel">Artikel</string>
     <string name="konsultasi">Konsultasi</string>
+    <string name="kembali">Kembali</string>
+    <string name="detail_resep">Detail Resep</string>
+    <string name="judul_resep">Judul Resep</string>
 </resources>

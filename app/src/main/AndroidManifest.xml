@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DokterDiabetesForElderly">
-        <activity android:name=".StepAfterMainMenu.Shop"></activity>
+        <activity android:name=".Resep.DetailResep"></activity>
+        <activity android:name=".StepAfterMainMenu.Shop" />
         <activity android:name=".LoginUmum" />
         <activity android:name=".PilihanLogin" />
         <activity android:name=".Konsultasi.DetailKonsultasi" />
         <activity android:name=".Pesan.DetailPesan" />
         <activity android:name=".StepAfterMainMenu.ListKategoriArtikel" />
         <activity android:name=".Artikel.DetailArtikel" />
-        <activity android:name=".Resep" />
+        <activity android:name=".Resep.Resep" />
         <activity android:name=".Login" />
         <activity android:name=".StepAfterMainMenu.DataGlukosa" />
         <activity android:name=".MainMenu.Profil" />

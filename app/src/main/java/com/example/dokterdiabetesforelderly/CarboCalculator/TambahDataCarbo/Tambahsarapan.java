@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.SearchView;
 
 import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterCarbo.DataAdapterSarapan;
 import com.example.dokterdiabetesforelderly.CarboCalculator.Carbocalculator;
@@ -31,6 +32,7 @@ public class Tambahsarapan extends AppCompatActivity implements DataAdapterSarap
     private ArrayList<PoolData> listArray;
     //private CarboCalAdapter adapter;
     private DataAdapterSarapan sarapanAdapter;
+    //private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

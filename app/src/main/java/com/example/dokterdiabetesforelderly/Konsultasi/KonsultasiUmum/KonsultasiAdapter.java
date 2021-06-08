@@ -1,4 +1,4 @@
-package com.example.dokterdiabetesforelderly.Konsultasi;
+package com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -59,7 +59,7 @@ public class KonsultasiAdapter extends RecyclerView.Adapter<KonsultasiAdapter.vi
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_konsultasi);
             idTextKonsultasi = itemView.findViewById(R.id.idKonsultasi);
-            judulTextKonsultasi = itemView.findViewById(R.id.judulKonsultasi);
+            judulTextKonsultasi = itemView.findViewById(R.id.txKonsultasi);
         }
     }
 }

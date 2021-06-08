@@ -1,6 +1,5 @@
-package com.example.dokterdiabetesforelderly.Konsultasi;
+package com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum;
 
-import com.example.dokterdiabetesforelderly.Artikel.ModelArtikel;
 import com.example.dokterdiabetesforelderly.R;
 
 import java.util.ArrayList;

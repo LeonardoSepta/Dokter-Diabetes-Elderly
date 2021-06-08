@@ -1,4 +1,4 @@
-package com.example.dokterdiabetesforelderly.Konsultasi;
+package com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,8 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiAdapter;
-import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiData;
+import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUser;
+import com.example.dokterdiabetesforelderly.Konsultasi.PertanyaanKonsultasi;
 import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
 import com.example.dokterdiabetesforelderly.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -43,7 +43,7 @@ public class Konsultasi extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navkonsultasi);
+        /*BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navkonsultasi);
         bottomNavigationView.setSelectedItemId(R.id.konsultasiuserlain);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -59,7 +59,7 @@ public class Konsultasi extends AppCompatActivity {
                 }
                 return false;
             }
-        });
+        });*/
     }
 
     private void showRecyclerListKonsultasi(){
@@ -80,4 +80,5 @@ public class Konsultasi extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
+
 }

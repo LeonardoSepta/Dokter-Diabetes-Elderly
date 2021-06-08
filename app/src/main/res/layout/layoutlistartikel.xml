@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/backgroundbutton">
+        android:background="@drawable/backgroundpesan">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_item_artikel"
             android:layout_width="55dp"

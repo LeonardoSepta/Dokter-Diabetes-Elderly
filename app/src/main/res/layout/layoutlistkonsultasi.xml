@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/backgroundbutton">
+        android:background="@drawable/backgroundpesan">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_item_konsultasi"
             android:layout_width="55dp"
@@ -18,8 +18,9 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_centerVertical="true"
+            android:src="@drawable/logo_dokter_diabetes"
             android:paddingLeft="5dp"
-            tools:src="@color/basecolor"
+
             />
 
         <RelativeLayout
@@ -42,7 +43,7 @@
                 />
 
             <TextView
-                android:id="@+id/judulKonsultasi"
+                android:id="@+id/txKonsultasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"

@@ -4,31 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Konsultasi.DetailKonsultasi"
+    tools:context=".Konsultasi.KonsultasiUmum.DetailKonsultasi"
     android:background="@color/basecolor"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        >
         <ImageButton
             android:onClick="back"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="#C70039"
-            android:src="@drawable/ic_baseline_navigate_before_24">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/basecolor"
+            android:src="@drawable/ic_baseline_navigate_before_24_white"
+            tools:targetApi="lollipop">
         </ImageButton>
         <TextView
             android:onClick="back"
+            android:layout_marginStart="40dp"
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:paddingTop="20dp">
+            >
         </TextView>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/img_detail_Konsultasi"

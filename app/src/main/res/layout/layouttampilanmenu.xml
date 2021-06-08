@@ -3,15 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal">
     <RelativeLayout
         android:layout_margin="5dp"
-        android:background="#c70039"
+        android:background="@drawable/backgroundtotalcarbo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:id="@+id/id">
 
         <TextView
@@ -22,9 +22,9 @@
             android:layout_centerVertical="true"
             android:textSize="20sp"
             android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="nama"
-            android:textColor="#FFFFFF"
+            android:text="@string/nama"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             tools:ignore="MissingConstraints"/>
 
         <TextView
@@ -32,23 +32,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="60dp"
             android:textSize="20sp"
-            android:text="carbo"
-            android:textColor="#FFFFFF"
-            tools:ignore="MissingConstraints"/>
+            android:text="@string/carbo"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints,RelativeOverlap"/>
 
-        <!--<Button
+
+        <ImageButton
             android:id="@+id/btnHapus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:textColor="@color/white"
-            android:text="tambah"
-            android:textSize="18sp"
-            android:backgroundTint="@color/bottomnavcolor"
-            android:layout_marginStart="150dp"/>
--->
+            android:backgroundTint="#424242"
+            android:src="@drawable/ic_baseline_remove_circle_24"
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo" />
 
     </RelativeLayout>
 

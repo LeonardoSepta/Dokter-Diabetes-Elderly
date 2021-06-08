@@ -7,27 +7,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
 import com.example.dokterdiabetesforelderly.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Glukosa extends AppCompatActivity {
     EditText numberGlukosa;
     EditText tglGlukosa;
     SwitchCompat puasa;
-    //private DatabaseReference database;
-
-    public Glukosa(){
-
-    }
+    ArrayList<ModelGlukosa> modelGlukosa;
+    Map<String, Object> values = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glukosa);
+
+        //current date
+        TextView textView = findViewById(R.id.dateGlukosa);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String currentDate = simpleDateFormat.format(new Date());
+        textView.setText(currentDate);
 
     }
     public void back(View view) {
@@ -46,18 +56,29 @@ public class Glukosa extends AppCompatActivity {
 
     public void SimpanGlukosa(View view) {
         //declare edittext
-        numberGlukosa = findViewById(R.id.numGlukosa);
-        tglGlukosa = findViewById(R.id.tanggalGlukosa);
-        puasa = findViewById(R.id.puasa);
+        numberGlukosa = (EditText) findViewById(R.id.numGlukosa);
+
+        /*tglGlukosa = (EditText) findViewById(R.id.tanggalGlukosa);*/
+
+        puasa = (SwitchCompat) findViewById(R.id.puasa);
         //instansiasi database Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //declare database yg dituju
         DatabaseReference mydb = database.getReference("DataGlukosa");
         //memberi nilai pada database yg dituju
-        mydb.child("DataGlukosa").setValue(numberGlukosa.getText().toString());
-        mydb.child("TglDataGlukosa").setValue(tglGlukosa.getText().toString());
+        String randomID = mydb.push().getKey();
+        String Dataguladarah = numberGlukosa.getText().toString();
+       /* String Tgldataglukosa = tglGlukosa.getText().toString();*/
 
-        Intent intent = new Intent(Glukosa.this, HasilGlukosa.class);
+        values.put("DataGulaDarah",Dataguladarah);
+
+       /* values.put("TglDataGlukosa",Tgldataglukosa);*/
+
+        mydb.child(randomID).setValue(values);
+        //mydb.child("DataGulaDarah").setValue(DataGulaDarah);
+        //mydb.child("TglDataGlukosa").setValue(TglDataGlukosa);
+
+        Intent intent = new Intent(getApplicationContext(), HasilGlukosa.class);
         startActivity(intent);
     }
 }

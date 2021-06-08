@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum.Konsultasi;
+import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUser;
 import com.example.dokterdiabetesforelderly.MainActivity;
 import com.example.dokterdiabetesforelderly.Pesan.Pesan;
 import com.example.dokterdiabetesforelderly.R;
@@ -32,13 +34,13 @@ public class Profil extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.beranda:
                         Intent intentberanda = new Intent(Profil.this, MainMenu.class);
-                        intentberanda.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intentberanda.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         startActivity(intentberanda);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.pesan:
                         Intent intentpesan = new Intent(Profil.this, Pesan.class);
-                        intentpesan.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intentpesan.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         startActivity(intentpesan);
                         overridePendingTransition(0,0);
                         return true;
@@ -85,8 +87,11 @@ public class Profil extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
-    /*public void exit(View view) {
-        startActivity(new Intent(Profil.this, MainActivity.class));
-        finish();
-    }*/
+
+
+    public void masukRiwayatKonsultasi(View view) {
+        startActivity(new Intent(Profil.this, KonsultasiUser.class));
+        overridePendingTransition(0,0);
+    }
+
 }

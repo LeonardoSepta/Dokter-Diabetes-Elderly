@@ -6,34 +6,45 @@
     tools:context=".CarboCalculator.Carbocalculator"
     android:background="@color/basecolor"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
         <ImageButton
             android:onClick="back"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="#C70039"
-            android:src="@drawable/ic_baseline_navigate_before_24"
-            tools:targetApi="lollipop">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/basecolor"
+            android:src="@drawable/ic_baseline_navigate_before_24_white"
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo">
         </ImageButton>
         <TextView
             android:onClick="back"
+            android:layout_marginStart="40dp"
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kembali"
+            android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:paddingTop="20dp"
-            tools:ignore="HardcodedText">
+            >
         </TextView>
+
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_centerInParent="true"
             android:layout_marginHorizontal="30dp"
-            android:src="@drawable/logodokterdiabetes">
-        </ImageView>
-    </LinearLayout>
+            android:src="@drawable/logodokterdiabetes"
+            android:contentDescription="@string/todo" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +57,10 @@
             android:textColor="@color/white"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Carbo Calculator"/>
+            android:text="Carbo Calculator"
+            android:textStyle="bold"
+            android:paddingBottom="10dp"
+            />
     </LinearLayout>
 
 
@@ -56,7 +70,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/backgroundmenu">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -64,68 +77,95 @@
 
             <TextView
                 android:paddingTop="15dp"
-                android:paddingLeft="8dp"
+                android:paddingStart="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="Masukan Tanggal/Bulan/Tahun"/>
-            <EditText
-                android:paddingLeft="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="Masukan tanggal"/>
+                android:text="Tanggal/Bulan/Tahun data hari ini"
+                tools:ignore="RtlSymmetry" />
+
+            <!--Membuat current date-->
             <TextView
-                android:paddingLeft="8dp"
+                android:id="@+id/dateCarbo"
+                android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Level Aktifitas"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:paddingBottom="10dp"
+                />
+
+            <TextView
+                android:paddingStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/level_aktifitas"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
-            <LinearLayout
-                android:paddingLeft="8dp"
-                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:gravity="center"
+                tools:ignore="RtlSymmetry">
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-
-                    android:text="Ringan"/>
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/radio_selector"
+                    android:button="@drawable/null_radio_button"
+                    android:textColor="@drawable/radio_text_selector"
+                    android:text="@string/ringan"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    />
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-
-                    android:text="Cukup"/>
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/radio_selector"
+                    android:button="@drawable/null_radio_button"
+                    android:textColor="@drawable/radio_text_selector"
+                    android:text="@string/cukup"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    />
                 <RadioButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-
-                    android:text="Aktif"/>
-            </LinearLayout>
+                    android:background="@drawable/radio_selector"
+                    android:button="@drawable/null_radio_button"
+                    android:textColor="@drawable/radio_text_selector"
+                    android:text="@string/aktif"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    />
+            </RadioGroup>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/backgroundlistcarbo">
                 <TextView
-                    android:paddingLeft="8dp"
+                    android:paddingStart="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sarapan"
+                    android:text="Data Sarapan"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
-
+                    android:textSize="20sp"
+                    tools:ignore="RtlSymmetry" />
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listSarapan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -138,14 +178,9 @@
                     android:layout_marginStart="40dp"
                     android:backgroundTint="#808080"
                     android:textColor="@color/white"
-                    android:text="Tambah Data Sarapan + "/>
-                <!--<Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:backgroundTint="#808080"
-                    android:textColor="@color/white"
-                    android:text="Hapus Data"/>-->
+                    android:text="@string/tambah_data_sarapan"
+                    tools:targetApi="lollipop" />
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -153,20 +188,21 @@
                 android:orientation="vertical"
                 android:background="@drawable/backgroundlistcarbo">
                 <TextView
-                    android:paddingLeft="8dp"
+                    android:paddingStart="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Makan Siang"
+                    android:text="Data Makan Siang"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    tools:ignore="RtlSymmetry" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listMakanSiang"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -179,28 +215,25 @@
                     android:layout_marginStart="40dp"
                     android:backgroundTint="#808080"
                     android:textColor="@color/white"
-                    android:text="Tambah Data Makan Siang + "/>
-                <!--<Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:backgroundTint="#808080"
-                    android:textColor="@color/white"
-                    android:text="Hapus Data"/>-->
+                    android:text="@string/tambah_data_makan_siang"
+                    tools:targetApi="lollipop" />
+
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/backgroundlistcarbo">
                 <TextView
-                    android:paddingLeft="8dp"
+                    android:paddingStart="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Makan Malam"
+                    android:text="Data Makan Malam"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    tools:ignore="RtlSymmetry" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listMknMlm"
@@ -208,6 +241,7 @@
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -220,33 +254,28 @@
                     android:layout_marginStart="40dp"
                     android:backgroundTint="#808080"
                     android:textColor="@color/white"
-                    android:text="Tambah Data Makan Malam + "/>
-                <!--<Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:backgroundTint="#808080"
-                    android:textColor="@color/white"
-                    android:text="Hapus Data"/>-->
+                    android:text="@string/tambah_data_makan_malam"
+                    tools:targetApi="lollipop" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="25dp"
                 >
                 <Button
                     android:onClick="simpanCarbo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="113dp"
-                    android:text="Simpan"
+                    android:layout_marginStart="113dp"
+                    android:text="@string/simpan"
                     android:backgroundTint="#808080"
                     android:textSize="24sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    tools:targetApi="lollipop" />
             </LinearLayout>
         </LinearLayout>
-
-
 
     </androidx.core.widget.NestedScrollView>
 

@@ -9,9 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.SearchView;
 
-import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterCarbo.DataAdapterSarapan;
+import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterTambahData.DataAdapterSarapan;
 import com.example.dokterdiabetesforelderly.CarboCalculator.Carbocalculator;
 import com.example.dokterdiabetesforelderly.CarboCalculator.PoolData;
 import com.example.dokterdiabetesforelderly.R;
@@ -24,11 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Tambahsarapan extends AppCompatActivity implements DataAdapterSarapan.OnRecycleListener{
+public class Tambahsarapan extends AppCompatActivity{
     private RecyclerView sarapan;
     private DatabaseReference mydb,dbDataSarapan;
-    //private ArrayList<PoolData> listArray;
-    //private ArrayList<GetDataIntent> data;
     private ArrayList<PoolData> listArray;
     //private CarboCalAdapter adapter;
     private DataAdapterSarapan sarapanAdapter;
@@ -86,24 +83,13 @@ public class Tambahsarapan extends AppCompatActivity implements DataAdapterSarap
         });
     }
 
-    @Override
-    public void onRecycleListener(int position) {
-        Log.d("TAG", "onRecycleListener: clicked");
-        PoolData poolData = listArray.get(position);
-
-        String posisiData = String.valueOf(position);
-        Intent intent = new Intent(getApplicationContext(), Carbocalculator.class);
-        intent.putExtra("posisiData", posisiData);
-        intent.putExtra("Nama", poolData.getNama());
-        intent.putExtra("Carbo", poolData.getCarbo());
-        startActivity(intent);
-    }
-
     public void back(View view) {
         finish();
     }
 
-    /*public void savesarapan(View view) {
-        finish();
-    }*/
+    public void lewati(View view) {
+        Intent intent = new Intent(Tambahsarapan.this, Carbocalculator.class);
+        startActivity(intent);
+    }
+
 }

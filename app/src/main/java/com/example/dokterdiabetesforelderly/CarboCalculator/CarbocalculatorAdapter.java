@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,8 +20,6 @@ import java.util.Map;
 public class CarbocalculatorAdapter extends RecyclerView.Adapter<CarbocalculatorAdapter.viewHolder> {
     private Context context;
     private ArrayList<PoolData> dataList;
-    DatabaseReference databaseReference;
-    Map<String, Object> values = new HashMap<>();
 
     public CarbocalculatorAdapter(Context myContext, ArrayList<PoolData> list){
         this.context = myContext;
@@ -52,7 +51,6 @@ public class CarbocalculatorAdapter extends RecyclerView.Adapter<Carbocalculator
             super(itemView);
             txNamaMenu = itemView.findViewById(R.id.namaMenu);
             txCarboMenu = itemView.findViewById(R.id.carboMenu);
-
         }
     }
 }

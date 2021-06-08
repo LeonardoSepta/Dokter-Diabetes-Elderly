@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PilihanLogin"
-    android:background="@color/basecolor"
     android:orientation="vertical"
+    android:background="@color/basecolor"
     >
 
 
@@ -39,7 +39,7 @@
             android:gravity="center_vertical|center_horizontal"
             android:layout_gravity="center"
             tools:ignore="HardcodedText"
-            android:paddingBottom="30dp">
+            android:paddingBottom="70dp">
         </TextView>
     </LinearLayout>
 
@@ -72,10 +72,11 @@
             >
             <androidx.cardview.widget.CardView
                 android:onClick="opsiLansia"
-                android:layout_width="190dp"
+                android:layout_width="165dp"
                 android:layout_height="190dp"
                 android:layout_row="0"
                 android:layout_column="0"
+                android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
                 android:layout_margin="8dp"
@@ -113,11 +114,12 @@
 
             <androidx.cardview.widget.CardView
                 android:onClick="opsiKeluarga"
-                android:layout_width="190dp"
+                android:layout_width="165dp"
                 android:layout_height="190dp"
                 tools:ignore="OnClick"
                 android:layout_row="1"
                 android:layout_column="0"
+                android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
                 android:layout_margin="8dp"
@@ -156,7 +158,7 @@
 
 
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -179,6 +181,6 @@
             android:textColor="@color/black"
             tools:ignore="HardcodedText,UnusedAttribute">
         </Button>
-    </LinearLayout>
+    </LinearLayout>-->
 
 </LinearLayout>

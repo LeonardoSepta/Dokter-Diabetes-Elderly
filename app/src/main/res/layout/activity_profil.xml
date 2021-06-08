@@ -80,30 +80,69 @@
                 />
         </LinearLayout>
 
-        <LinearLayout
-            android:onClick="exitApp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/backgroundbutton">
-            <ImageButton
-                android:layout_marginLeft="10dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_baseline_exit_basecolor"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <TextView
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
+                android:onClick="masukRiwayatKonsultasi"
+                android:layout_below="@+id/listKonsultasi"
+                android:id="@+id/buttonRiwayatKonsul"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Masuk Riwayat Pertanyaan"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:background="@drawable/backgroundbutton"
+                />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/listKonsultasi"
+                android:layout_alignEnd="@+id/buttonRiwayatKonsul"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/backgroundgrey"
+                android:onClick="masukRiwayatKonsultasi"
+                android:src="@drawable/ic_baseline_navigate_next_24_black" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:onClick="exitApp"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/backgroundbutton">
+
+            <ImageButton
+                android:id="@+id/logoexit"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/backgroundgrey"
+                android:src="@drawable/ic_baseline_exit_basecolor"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/textkeluar"
+                android:layout_alignParentEnd="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
                 android:text="KELUAR AKUN"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:gravity="center_vertical"
-                />
-        </LinearLayout>
+                android:textStyle="bold" />
+        </RelativeLayout>
 
     </LinearLayout>
 

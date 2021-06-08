@@ -1,4 +1,4 @@
-package com.example.dokterdiabetesforelderly.Konsultasi;
+package com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum;
 
 import android.os.Parcel;
 import android.os.Parcelable;

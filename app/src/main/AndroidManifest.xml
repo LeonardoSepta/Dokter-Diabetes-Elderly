@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/removebg_logo_dokter_diabetes"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -13,7 +13,7 @@
         <activity android:name=".StepAfterMainMenu.Shop" />
         <activity android:name=".LoginUmum" />
         <activity android:name=".PilihanLogin" />
-        <activity android:name=".Konsultasi.DetailKonsultasi" />
+        <activity android:name=".Konsultasi.KonsultasiUmum.DetailKonsultasi" />
         <activity android:name=".Pesan.DetailPesan" />
         <activity android:name=".StepAfterMainMenu.ListKategoriArtikel" />
         <activity android:name=".Artikel.DetailArtikel" />
@@ -28,7 +28,7 @@
         <activity android:name=".Glukosa.HasilGlukosa" />
         <activity android:name=".Konsultasi.KonsultasiUser" />
         <activity android:name=".Konsultasi.PertanyaanKonsultasi" />
-        <activity android:name=".Konsultasi.Konsultasi" />
+        <activity android:name=".Konsultasi.KonsultasiUmum.Konsultasi" />
         <activity android:name=".Glukosa.Glukosa" />
         <activity android:name=".CarboCalculator.HasilCarbocalculator" />
         <activity android:name=".Artikel.ArtikelInfoDiabetes" />

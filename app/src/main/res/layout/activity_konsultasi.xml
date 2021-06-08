@@ -4,41 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Konsultasi.Konsultasi"
+    tools:context=".Konsultasi.KonsultasiUmum.Konsultasi"
     android:background="#C70039"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
         <ImageButton
             android:onClick="back"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="#c70039"
-            android:src="@drawable/ic_baseline_navigate_before_24"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/basecolor"
+            android:src="@drawable/ic_baseline_navigate_before_24_white"
             tools:targetApi="lollipop">
         </ImageButton>
         <TextView
             android:onClick="back"
+            android:layout_marginStart="40dp"
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:paddingTop="20dp">
+            >
         </TextView>
 
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_centerInParent="true"
             android:layout_marginHorizontal="30dp"
             android:src="@drawable/logodokterdiabetes">
         </ImageView>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,7 +54,7 @@
         android:textColor="#FFFFFF"
         >
     </TextView>
-    <LinearLayout
+   <!-- <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -63,36 +68,47 @@
             >
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    </LinearLayout>
-
-    <LinearLayout
+    </LinearLayout>-->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:layout_marginTop="30dp"
-        android:orientation="vertical"
-        android:background="@drawable/backgroundmenu"
-        >
-        <androidx.recyclerview.widget.RecyclerView
+        android:background="@drawable/backgroundmenu">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:id="@+id/listKonsultasi"
+            android:layout_height="450dp"
+            android:orientation="vertical"
             >
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal|center_vertical"
-        android:id="@+id/buatkonsultasi"
-        android:text="Buat Pertanyaan Konsultasi"
-        android:textSize="15sp"
-        android:textColor="#000000"
-        android:paddingBottom="10dp"
-        android:backgroundTint="#a9a9a9"
-        android:layout_marginHorizontal="60dp"
-        >
-    </Button>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:id="@+id/listKonsultasi"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:id="@+id/buatkonsultasi"
+            android:text="Buat Pertanyaan Konsultasi"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:paddingBottom="10dp"
+            android:backgroundTint="#a9a9a9"
+            android:layout_marginHorizontal="60dp"
+            >
+        </Button>
+    </RelativeLayout>
 
 </LinearLayout>

@@ -13,4 +13,14 @@
     <string name="kembali">Kembali</string>
     <string name="detail_resep">Detail Resep</string>
     <string name="judul_resep">Judul Resep</string>
+    <string name="carbo">carbo</string>
+    <string name="nama">nama</string>
+    <string name="simpan">Simpan</string>
+    <string name="ringan">Ringan</string>
+    <string name="cukup">Cukup</string>
+    <string name="aktif">Aktif</string>
+    <string name="level_aktifitas">Level Aktifitas</string>
+    <string name="tambah_data_sarapan">Tambah Data Sarapan +</string>
+    <string name="tambah_data_makan_siang">Tambah Data Makan Siang +</string>
+    <string name="tambah_data_makan_malam">Tambah Data Makan Malam +</string>
 </resources>

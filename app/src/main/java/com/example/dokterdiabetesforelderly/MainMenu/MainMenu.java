@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahsarapan;
 import com.example.dokterdiabetesforelderly.Pesan.Pesan;
 import com.example.dokterdiabetesforelderly.R;
+import com.example.dokterdiabetesforelderly.Resep.Resep;
+import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum.Konsultasi;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.DataBeratBadan;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.DataGlukosa;
-import com.example.dokterdiabetesforelderly.StepAfterMainMenu.Datacarbocalculator;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.ListKategoriArtikel;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.Shop;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -37,14 +39,14 @@ public class MainMenu extends AppCompatActivity {
                         return true;
                     case R.id.pesan:
                         Intent intentpesan = new Intent(MainMenu.this, Pesan.class);
-                        intentpesan.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intentpesan.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         startActivity(intentpesan);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.profil:
 //                     Intent Profil = new Intent(Mainmenu.this, Profil.class);
                         Intent intentprofil = new Intent(MainMenu.this, Profil.class);
-                        intentprofil.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intentprofil.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         startActivity(intentprofil);
                         overridePendingTransition(0,0);
                         return true;
@@ -112,7 +114,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void OpenKonsultasi (){
-        Intent intent = new Intent(MainMenu.this, com.example.dokterdiabetesforelderly.Konsultasi.Konsultasi.class);
+        Intent intent = new Intent(MainMenu.this, Konsultasi.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
@@ -124,14 +126,14 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void OpenResep (){
-        Intent intent = new Intent( MainMenu.this, com.example.dokterdiabetesforelderly.Resep.Resep.class);
+        Intent intent = new Intent( MainMenu.this, Resep.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
 
     public void OpenCarboCalculator (){
-        Intent intent = new Intent(MainMenu.this, Datacarbocalculator.class);
+        Intent intent = new Intent(MainMenu.this, Tambahsarapan.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

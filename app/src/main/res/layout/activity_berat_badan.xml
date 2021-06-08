@@ -8,32 +8,42 @@
     android:background="#c70039"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
         <ImageButton
             android:onClick="back"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="#C70039"
-            android:src="@drawable/ic_baseline_navigate_before_24">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/basecolor"
+            android:src="@drawable/ic_baseline_navigate_before_24_white"
+            tools:targetApi="lollipop">
         </ImageButton>
         <TextView
             android:onClick="back"
+            android:layout_marginStart="40dp"
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:paddingTop="20dp">
+            >
         </TextView>
+
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_centerInParent="true"
             android:layout_marginHorizontal="30dp"
             android:src="@drawable/logodokterdiabetes">
         </ImageView>
-    </LinearLayout>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,6 +53,7 @@
             android:layout_height="wrap_content"
             android:text="Berat Badan (BMI)"
             android:textSize="24sp"
+            android:textStyle="bold"
             android:textColor="#FFFFFF"
             android:gravity="center_vertical|center_horizontal"
             android:layout_gravity="center">
@@ -105,14 +116,25 @@
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Tinggi Badan (cm):"
+            android:text="Tanggal data dimasukkan:"
             android:textColor="#000000"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp">
         </TextView>
 
-        <EditText
+        <!--Membuat current date-->
+        <TextView
+            android:id="@+id/dateBB"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:paddingBottom="10dp"
+            />
+
+        <!--<EditText
             android:id="@+id/tanggalBB"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
@@ -123,7 +145,7 @@
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="20sp">
-        </EditText>
+        </EditText>-->
 
         <Button
             android:onClick="SimpanBB"

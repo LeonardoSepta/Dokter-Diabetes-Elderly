@@ -1,4 +1,4 @@
-package com.example.dokterdiabetesforelderly.Konsultasi;
+package com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.dokterdiabetesforelderly.Artikel.ModelArtikel;
 import com.example.dokterdiabetesforelderly.R;
 
 public class DetailKonsultasi extends AppCompatActivity {

@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterCarbo.DataAdapterMknSiang;
+import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterTambahData.DataAdapterMknSiang;
+import com.example.dokterdiabetesforelderly.CarboCalculator.Carbocalculator;
 import com.example.dokterdiabetesforelderly.CarboCalculator.PoolData;
 import com.example.dokterdiabetesforelderly.R;
 import com.google.firebase.database.DataSnapshot;
@@ -81,5 +83,10 @@ public class Tambahmknsiang extends AppCompatActivity {
     }
     public void back(View view) {
         finish();
+    }
+
+    public void lewati(View view) {
+        Intent intent = new Intent(Tambahmknsiang.this, Carbocalculator.class);
+        startActivity(intent);
     }
 }

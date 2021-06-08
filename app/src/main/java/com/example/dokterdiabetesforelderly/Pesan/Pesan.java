@@ -40,7 +40,7 @@ public class Pesan extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.beranda:
                         Intent intentberanda = new Intent(Pesan.this, MainMenu.class);
-                        intentberanda.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intentberanda.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         startActivity(intentberanda);
                         overridePendingTransition(0,0);
                         return true;
@@ -49,7 +49,7 @@ public class Pesan extends AppCompatActivity {
                     case R.id.profil:
 //                     Intent Profil = new Intent(Mainmenu.this, Profil.class);
                         Intent intentprofil = new Intent(Pesan.this, Profil.class);
-                        intentprofil.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intentprofil.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         startActivity(intentprofil);
                         overridePendingTransition(0,0);
                         return true;

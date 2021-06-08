@@ -8,41 +8,42 @@
     android:background="#C70039"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageButton
+            android:onClick="back"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/basecolor"
+            android:src="@drawable/ic_baseline_navigate_before_24_white"
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo" />
 
+        <TextView
+            android:onClick="back"
+            android:layout_marginStart="40dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kembali"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="30dp"
+            android:src="@drawable/logodokterdiabetes"
+            android:contentDescription="@string/todo" />
 
-                <ImageButton
-                    android:onClick="back"
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="#C70039"
-                    android:src="@drawable/ic_baseline_navigate_before_24"
-                    tools:targetApi="lollipop"
-                    tools:ignore="ContentDescription">
-                </ImageButton>
-                <TextView
-                    android:onClick="back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kembali"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:paddingTop="20dp"
-                    tools:ignore="HardcodedText">
-                </TextView>
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginHorizontal="30dp"
-                    android:src="@drawable/logodokterdiabetes"
-                    tools:ignore="ContentDescription">
-                </ImageView>
-            </LinearLayout>
+    </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -55,14 +56,16 @@
                     android:textColor="#FFFFFF"
                     android:gravity="center_vertical|center_horizontal"
                     android:layout_gravity="center"
+                    android:textStyle="bold"
                     tools:ignore="HardcodedText">
                 </TextView>
             </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="UselessParent">
-            <LinearLayout
+        android:layout_height="wrap_content"
+        >
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
                 android:layout_marginTop="50dp"
@@ -70,7 +73,20 @@
                 android:orientation="vertical"
                 tools:ignore="HardcodedText">
 
+                <!--Membuat current date-->
+                <TextView
+                    android:id="@+id/dateHasilCarbo"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:textColor="@color/black"
+                    android:paddingBottom="10dp"
+                    android:layout_centerHorizontal="true"
+                    />
+
                 <com.github.mikephil.charting.charts.BarChart
+                    android:layout_below="@+id/dateHasilCarbo"
                     android:id="@+id/carboBarChart"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
@@ -79,10 +95,11 @@
 
 
                 <Button
+                    android:layout_below="@+id/carboBarChart"
                     android:onClick="dataCarboCal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical|center_horizontal"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:backgroundTint="#808080"
@@ -91,7 +108,7 @@
                     tools:targetApi="lollipop">
                 </Button>
 
-            </LinearLayout>
+            </RelativeLayout>
 
     </ScrollView>
 

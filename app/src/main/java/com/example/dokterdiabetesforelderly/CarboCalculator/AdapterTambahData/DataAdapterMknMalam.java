@@ -1,6 +1,7 @@
-package com.example.dokterdiabetesforelderly.CarboCalculator.AdapterCarbo;
+package com.example.dokterdiabetesforelderly.CarboCalculator.AdapterTambahData;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dokterdiabetesforelderly.CarboCalculator.Carbocalculator;
 import com.example.dokterdiabetesforelderly.CarboCalculator.PoolData;
+import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahmknmalam;
+import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahmknsiang;
 import com.example.dokterdiabetesforelderly.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -54,6 +58,9 @@ public class DataAdapterMknMalam extends RecyclerView.Adapter<DataAdapterMknMala
                 values.put("carbo",carbo);
                 getDataSarapan.child(randomID).setValue(values);
                 Toast.makeText(v.getContext(), "Data Ditambah", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(v.getContext(), Carbocalculator.class);
+                v.getContext().startActivity(intent);
             }
         });
     }

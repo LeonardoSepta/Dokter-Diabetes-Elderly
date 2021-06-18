@@ -2,13 +2,18 @@ package com.example.dokterdiabetesforelderly.Glukosa;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.autofill.AutofillValue;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterCarbo.SarapanViewAdapter;
+import com.example.dokterdiabetesforelderly.CarboCalculator.PoolData;
 import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
 import com.example.dokterdiabetesforelderly.R;
 import com.github.mikephil.charting.charts.BarChart;
@@ -21,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
@@ -30,8 +36,11 @@ import java.util.Date;
 public class HasilGlukosa extends AppCompatActivity implements ValueEventListener {
     FirebaseDatabase mydb = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = mydb.getReference();
-    DatabaseReference gulaDarah = databaseReference.child("DataGlukosa");
+    DatabaseReference gulaDarah;
     String dataGulaDarah;
+    private RecyclerView listGlukosa;
+    ArrayList<ModelGlukosa> arrayList;
+    private AdapterGlukosa adapterGlukosa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +57,9 @@ public class HasilGlukosa extends AppCompatActivity implements ValueEventListene
         BarChart barChart = (BarChart) findViewById(R.id.glukosaBarChart);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(160f, 0));
+        entries.add(new BarEntry(90f, 0));
 
-        BarDataSet barDataSet = new BarDataSet(entries, "Cells");
+        BarDataSet barDataSet = new BarDataSet(entries, "Data");
 
         ArrayList<String> labels = new ArrayList<String>();
         labels.add("Data Kadar Glukosa");
@@ -65,6 +74,49 @@ public class HasilGlukosa extends AppCompatActivity implements ValueEventListene
         barDataSet.setValueTextSize(20);
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         barChart.animateY(3000);
+
+        //RecyclerView
+        gulaDarah = FirebaseDatabase.getInstance().getReference();
+        listGlukosa = (RecyclerView) findViewById(R.id.recyclerGlukosa);
+        listGlukosa.setLayoutManager(new LinearLayoutManager(this));
+        listGlukosa.setHasFixedSize(true);
+
+        CheckDataGlukosa();
+        AmbilDataFirebase();
+    }
+
+    private void AmbilDataFirebase() {
+        Query query = gulaDarah.child("DataGlukosa");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                CheckDataGlukosa();
+                for (DataSnapshot dataGlukosa:snapshot.getChildren()){
+                    ModelGlukosa modelGlukosa = new ModelGlukosa();
+                    modelGlukosa.setDataglukosa(dataGlukosa.child("DataGulaDarah").getValue().toString());
+
+                    arrayList.add(modelGlukosa);
+                }
+                adapterGlukosa = new AdapterGlukosa(getApplicationContext(),arrayList);
+                listGlukosa.setAdapter(adapterGlukosa);
+                adapterGlukosa.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void CheckDataGlukosa() {
+        if (arrayList != null){
+            arrayList.clear();
+            if (adapterGlukosa != null){
+                adapterGlukosa.notifyDataSetChanged();
+            }
+        }
+        arrayList = new ArrayList<>();
     }
 
     public void back(View view) {

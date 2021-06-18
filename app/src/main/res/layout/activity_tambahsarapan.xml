@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_before_24_white"
-            tools:targetApi="lollipop">
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo">
         </ImageButton>
         <TextView
             android:onClick="back"
@@ -32,14 +33,15 @@
             android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            >
+            tools:ignore="RelativeOverlap">
         </TextView>
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/logodokterdiabetes">
+            android:src="@drawable/logodokterdiabetes"
+            android:contentDescription="@string/todo">
         </ImageView>
 
         <TextView
@@ -49,9 +51,10 @@
             android:layout_marginEnd="45dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lewati"
+            android:text="@string/lewati"
             android:textColor="#FFFFFF"
-            android:textSize="20sp">
+            android:textSize="20sp"
+            tools:ignore="RelativeOverlap">
         </TextView>
         <ImageButton
             android:onClick="lewati"
@@ -61,7 +64,8 @@
             android:layout_centerVertical="true"
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_next_24"
-            />
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo" />
 
     </RelativeLayout>
     <LinearLayout
@@ -72,27 +76,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
+            android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Tambah Sarapan"/>
+            android:text="@string/tambah_sarapan"/>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:background="@drawable/backgroundmenu"
         android:layout_marginTop="20dp"
         android:orientation="vertical">
-       <!-- <SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>-->
 
-        <androidx.recyclerview.widget.RecyclerView
+        <AutoCompleteTextView
+            android:layout_margin="10dp"
+            android:id="@+id/searchSarapan"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/sarapan">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="40dp"
+            android:drawableStart="@drawable/ic_baseline_search"
+            android:background="@drawable/backgroundgrey"
+            tools:ignore="LabelFor" />
 
-    </LinearLayout>
+        <ScrollView
+            android:layout_below="@+id/searchSarapan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sarapan">
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+
+
+    </RelativeLayout>
 </LinearLayout>

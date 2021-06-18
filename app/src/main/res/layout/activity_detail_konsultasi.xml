@@ -20,15 +20,16 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_before_24_white"
-            tools:targetApi="lollipop">
-        </ImageButton>
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo"/>
+
         <TextView
             android:onClick="back"
             android:layout_marginStart="40dp"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kembali"
+            android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             >
@@ -44,15 +45,15 @@
         android:src="#808080"
         android:layout_marginTop="20dp"
         android:paddingBottom="20dp"
-        >
-    </ImageView>
+        android:contentDescription="@string/todo" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/backgroundmenu">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/textJudulKonsultasi"
@@ -63,22 +64,23 @@
                 android:textColor="@color/black"
                 android:layout_marginTop="20dp"
                 android:text="Judul Konsultasi"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginStart="5dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginStart="10dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Responden : "
+                        android:text="@string/responden"
                         android:textColor="@color/black"
                         android:textStyle="bold"
-                        android:paddingRight="10dp"
-                        android:textSize="16sp"/>
+                        android:paddingEnd="10dp"
+                        android:textSize="16sp"
+                        tools:ignore="RtlSymmetry" />
 
                     <TextView
                         android:id="@+id/textIdKonsultasi"
@@ -96,16 +98,16 @@
                 android:layout_height="wrap_content"
                 android:text="detail konsultasi"
                 android:textColor="@color/darkgrey"
-                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
                 android:paddingTop="10dp"
-                />
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Jawaban Dokter:"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -114,7 +116,7 @@
                 android:id="@+id/textJawabanKonsultasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jawaban konsultasi"
+                android:text="@string/jawaban_konsultasi"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"

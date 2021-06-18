@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class HasilBeratBadan extends AppCompatActivity {
-
+    //ArrayList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

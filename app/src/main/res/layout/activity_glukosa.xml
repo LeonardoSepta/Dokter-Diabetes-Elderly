@@ -21,27 +21,27 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_before_24_white"
-            tools:targetApi="lollipop">
-        </ImageButton>
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo" />
         <TextView
             android:onClick="back"
             android:layout_marginStart="40dp"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kembali"
+            android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             >
         </TextView>
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="30dp"
-            android:src="@drawable/logodokterdiabetes">
-        </ImageView>
+            android:src="@drawable/logodokterdiabetes"
+            android:contentDescription="@string/todo" />
 
     </RelativeLayout>
 
@@ -51,7 +51,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Glukosa"
+            android:text="@string/glukosa"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
@@ -62,18 +62,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="600dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/backgroundmenu"
         android:orientation="vertical">
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Gula Darah (mg/dL):"
+            android:text="@string/gula_darah_mg_dl"
             android:textColor="#000000"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp">
+            android:layout_marginStart="10dp">
         </TextView>
 
         <EditText
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="20dp"
-            android:hint="Ex: 80 mg/dL"
+            android:hint="@string/ex_80_mg_dl"
             android:inputType="number"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
@@ -93,11 +93,11 @@
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Tanggal data dimasukan:"
+            android:text="@string/tanggal_data_dimasukan"
             android:textColor="#000000"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp">
+            android:layout_marginStart="10dp">
         </TextView>
 
         <!--Membuat current date-->
@@ -128,9 +128,9 @@
             android:id="@+id/puasa"
             android:layout_width="117dp"
             android:layout_height="wrap_content"
-            android:text="Puasa"
+            android:text="@string/puasa"
             android:textSize="20sp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             >
         </androidx.appcompat.widget.SwitchCompat>
 
@@ -139,11 +139,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#a9a9a9"
-            android:text="Simpan"
+            android:text="@string/simpan"
             android:textColor="#000000"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            >
+            android:layout_marginStart="10dp"
+            tools:targetApi="lollipop">
         </Button>
     </LinearLayout>
 </LinearLayout>

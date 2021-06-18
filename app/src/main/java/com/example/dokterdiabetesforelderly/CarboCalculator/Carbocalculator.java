@@ -13,14 +13,11 @@ import android.widget.TextView;
 import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterCarbo.MknMalamViewAdapter;
 import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterCarbo.MknSiangViewAdapter;
 import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterCarbo.SarapanViewAdapter;
-import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterTambahData.DataAdapterMknMalam;
-import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterTambahData.DataAdapterMknSiang;
-import com.example.dokterdiabetesforelderly.CarboCalculator.AdapterTambahData.DataAdapterSarapan;
+import com.example.dokterdiabetesforelderly.CarboCalculator.SingleAddDataCArbo.SingleAddMknMalam;
+import com.example.dokterdiabetesforelderly.CarboCalculator.SingleAddDataCArbo.SingleAddMknSiang;
+import com.example.dokterdiabetesforelderly.CarboCalculator.SingleAddDataCArbo.SingleAddSarapan;
 import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
 import com.example.dokterdiabetesforelderly.R;
-import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahmknmalam;
-import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahmknsiang;
-import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahsarapan;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,15 +30,15 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Carbocalculator extends AppCompatActivity {
-    private RecyclerView listSarapan, listMknSiang, listMknMlm;
+    private RecyclerView recyclerSarapan, recyclerMknSiang, recyclerMknMlm;
     private DatabaseReference mknsarapan, mknsiang, mknmalam;
     DatabaseReference sarapanDB;
     //private ArrayList<PoolData> listArray;
-    private ArrayList<PoolData> listArray, listMakanSiang, listMakanMalam;
+    private ArrayList<PoolData> listSarapan, listMakanSiang, listMakanMalam;
     private SarapanViewAdapter sarapanViewAdapter;
     private MknSiangViewAdapter mknSiangViewAdapter;
     private MknMalamViewAdapter mknMalamViewAdapter;
-    private CarbocalculatorAdapter carboAdapter;
+    //private CarbocalculatorAdapter carboAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,23 +56,23 @@ public class Carbocalculator extends AppCompatActivity {
         mknsiang = FirebaseDatabase.getInstance().getReference();
         sarapanDB = FirebaseDatabase.getInstance().getReference();
 
-        listArray = new ArrayList<PoolData>();
-        listSarapan = findViewById(R.id.listSarapan);
-        listSarapan.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        listSarapan.setNestedScrollingEnabled(false);
-        listSarapan.setHasFixedSize(true);
+        listSarapan = new ArrayList<>();
+        recyclerSarapan = findViewById(R.id.listSarapan);
+        recyclerSarapan.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerSarapan.setNestedScrollingEnabled(false);
+        recyclerSarapan.setHasFixedSize(true);
 
-        listMakanSiang = new ArrayList<PoolData>();
-        listMknSiang = findViewById(R.id.listMakanSiang);
-        listMknSiang.setLayoutManager(new LinearLayoutManager(this));
-        listMknSiang.setNestedScrollingEnabled(false);
-        listMknSiang.setHasFixedSize(true);
+        listMakanSiang = new ArrayList<>();
+        recyclerMknSiang = findViewById(R.id.listMakanSiang);
+        recyclerMknSiang.setLayoutManager(new LinearLayoutManager(this));
+        recyclerMknSiang.setNestedScrollingEnabled(false);
+        recyclerMknSiang.setHasFixedSize(true);
 
-        listMakanMalam = new ArrayList<PoolData>();
-        listMknMlm = findViewById(R.id.listMknMlm);
-        listMknMlm.setLayoutManager(new LinearLayoutManager(this));
-        listMknMlm.setNestedScrollingEnabled(false);
-        listMknMlm.setHasFixedSize(true);
+        listMakanMalam = new ArrayList<>();
+        recyclerMknMlm = findViewById(R.id.listMknMlm);
+        recyclerMknMlm.setLayoutManager(new LinearLayoutManager(this));
+        recyclerMknMlm.setNestedScrollingEnabled(false);
+        recyclerMknMlm.setHasFixedSize(true);
 
         CheckDataSarapan();
         AmbilDataSarapan();
@@ -101,10 +98,10 @@ public class Carbocalculator extends AppCompatActivity {
                     poolData.setNama(dataSarapan.child("nama").getValue().toString());
                     poolData.setCarbo(dataSarapan.child("carbo").getValue().toString());
 
-                    listArray.add(poolData);
+                    listSarapan.add(poolData);
                 }
-                sarapanViewAdapter = new SarapanViewAdapter(getApplicationContext(),listArray);
-                listSarapan.setAdapter(sarapanViewAdapter);
+                sarapanViewAdapter = new SarapanViewAdapter(getApplicationContext(),listSarapan);
+                recyclerSarapan.setAdapter(sarapanViewAdapter);
                 sarapanViewAdapter.notifyDataSetChanged();
             }
 
@@ -116,13 +113,13 @@ public class Carbocalculator extends AppCompatActivity {
     }
 
     private void CheckDataSarapan() {
-        if (listArray != null){
-            listArray.clear();
+        if (listSarapan != null){
+            listSarapan.clear();
             if (sarapanViewAdapter != null){
                 sarapanViewAdapter.notifyDataSetChanged();
             }
         }
-        listArray = new ArrayList<>();
+        listSarapan = new ArrayList<>();
     }
 
     private void AmbilDataMknMlm() {
@@ -140,7 +137,7 @@ public class Carbocalculator extends AppCompatActivity {
                     listMakanMalam.add(poolData);
                 }
                 mknMalamViewAdapter = new MknMalamViewAdapter(getApplicationContext(),listMakanMalam);
-                listMknMlm.setAdapter(mknMalamViewAdapter);
+                recyclerMknMlm.setAdapter(mknMalamViewAdapter);
                 mknMalamViewAdapter.notifyDataSetChanged();
             }
 
@@ -176,7 +173,7 @@ public class Carbocalculator extends AppCompatActivity {
                     listMakanSiang.add(poolData);
                 }
                 mknSiangViewAdapter = new MknSiangViewAdapter(getApplicationContext(),listMakanSiang);
-                listMknSiang.setAdapter(mknSiangViewAdapter);
+                recyclerMknSiang.setAdapter(mknSiangViewAdapter);
                 mknSiangViewAdapter.notifyDataSetChanged();
             }
 
@@ -206,17 +203,17 @@ public class Carbocalculator extends AppCompatActivity {
     }
 
     public void masukLayoutMknMalam(View view) {
-        Intent intent = new Intent(Carbocalculator.this, Tambahmknmalam.class);
+        Intent intent = new Intent(Carbocalculator.this, SingleAddMknMalam.class);
         startActivity(intent);
     }
 
     public void masukLayoutSarapan(View view) {
-        Intent intent = new Intent(Carbocalculator.this, Tambahsarapan.class);
+        Intent intent = new Intent(Carbocalculator.this, SingleAddSarapan.class);
         startActivity(intent);
     }
 
     public void masukLayoutMknSiang(View view) {
-        Intent intent = new Intent(Carbocalculator.this, Tambahmknsiang.class);
+        Intent intent = new Intent(Carbocalculator.this, SingleAddMknSiang.class);
         startActivity(intent);
     }
 

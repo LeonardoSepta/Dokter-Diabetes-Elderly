@@ -1,4 +1,4 @@
-package com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo;
+package com.example.dokterdiabetesforelderly.CarboCalculator.SingleAddDataCArbo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
-import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.AdapterTambahData.DataAdapterMknSiang;
+import com.example.dokterdiabetesforelderly.CarboCalculator.SingleAddDataCArbo.AdapterSingleAddData.SingleAdapterSarapan;
+import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.AdapterTambahData.DataAdapterSarapan;
 import com.example.dokterdiabetesforelderly.CarboCalculator.Carbocalculator;
 import com.example.dokterdiabetesforelderly.CarboCalculator.PoolData;
 import com.example.dokterdiabetesforelderly.R;
@@ -26,30 +27,29 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Tambahmknsiang extends AppCompatActivity {
-    private RecyclerView mknsianglist;
-    private DatabaseReference mydb, dbDataMknSiang;
-    //private ArrayList<PoolData> listArray;
-    //private ArrayList<GetDataIntent> data;
+public class SingleAddSarapan extends AppCompatActivity {
+    private RecyclerView sarapan;
+    private DatabaseReference mydb,dbDataSarapan;
     private ArrayList<PoolData> listArray,arrayList;
-    //private CarboCalAdapter adapter;
-    private DataAdapterMknSiang mknSiangAdapter;
+    private SingleAdapterSarapan sarapanAdapter;
     private AutoCompleteTextView searchdata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tambahmknsiang);
+        setContentView(R.layout.activity_single_add_sarapan);
 
-        mknsianglist = findViewById(R.id.mknsiang);
-        mknsianglist.setLayoutManager(new LinearLayoutManager(this));
-        mknsianglist.setHasFixedSize(true);
+        //declare RecyclerView
+        sarapan = findViewById(R.id.singleaddsarapan);
+        sarapan.setLayoutManager(new LinearLayoutManager(this));
+        sarapan.setHasFixedSize(true);
         mydb = FirebaseDatabase.getInstance().getReference();
+        dbDataSarapan = FirebaseDatabase.getInstance().getReference("sarapan");
         listArray = new ArrayList<PoolData>();
         arrayList = new ArrayList<PoolData>();
 
-        searchdata = (AutoCompleteTextView) findViewById(R.id.searchMknSiang);
-        dbDataMknSiang = FirebaseDatabase.getInstance().getReference("makansiang");
+        searchdata = (AutoCompleteTextView) findViewById(R.id.singleSearchSarapan);
+
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -62,7 +62,7 @@ public class Tambahmknsiang extends AppCompatActivity {
             }
         };
 
-        dbDataMknSiang.addListenerForSingleValueEvent(eventListener);
+        dbDataSarapan.addListenerForSingleValueEvent(eventListener);
 
         CheckData();
         AmbilDataFirebase();
@@ -92,7 +92,7 @@ public class Tambahmknsiang extends AppCompatActivity {
     }
 
     private void searchNama(String nama) {
-        Query query = dbDataMknSiang.orderByChild("nama").equalTo(nama);
+        Query query = dbDataSarapan.orderByChild("nama").equalTo(nama);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -106,9 +106,9 @@ public class Tambahmknsiang extends AppCompatActivity {
                     }
                     /*ArrayAdapter adapterData = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1,listNamaMenu);
                     sarapan.setAdapter(adapterData);*/
-                    mknSiangAdapter = new DataAdapterMknSiang(getApplicationContext(),arrayList);
-                    mknsianglist.setAdapter(mknSiangAdapter);
-                    mknSiangAdapter.notifyDataSetChanged();
+                    sarapanAdapter = new SingleAdapterSarapan(getApplicationContext(),arrayList);
+                    sarapan.setAdapter(sarapanAdapter);
+                    sarapanAdapter.notifyDataSetChanged();
                     /*sarapan.setVisibility(View.GONE);*/
                 }else{
                     Log.d("nama", "No Data Found");
@@ -122,33 +122,22 @@ public class Tambahmknsiang extends AppCompatActivity {
         });
     }
 
-    private void CheckData() {
-        if (listArray != null){
-            listArray.clear();
-            if (mknSiangAdapter != null){
-                mknSiangAdapter.notifyDataSetChanged();
-            }
-        }
-        listArray = new ArrayList<>();
-    }
-
     private void AmbilDataFirebase() {
-        Query query = mydb.child("makansiang");
+        Query query = mydb.child("sarapan");
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 CheckData();
-                for (DataSnapshot dataMknSiang:snapshot.getChildren()){
+                for (DataSnapshot dataSarapan:snapshot.getChildren()){
                     PoolData poolData = new PoolData();
-                    //PoolData poolData = dataSarapan.getValue(PoolData.class);
-                    poolData.setNama(dataMknSiang.child("nama").getValue().toString());
-                    poolData.setCarbo(dataMknSiang.child("carbo").getValue().toString());
+                    poolData.setNama(dataSarapan.child("nama").getValue().toString());
+                    poolData.setCarbo(dataSarapan.child("carbo").getValue().toString());
 
                     listArray.add(poolData);
                 }
-                mknSiangAdapter = new DataAdapterMknSiang(getApplicationContext(),listArray);
-                mknsianglist.setAdapter(mknSiangAdapter);
-                mknSiangAdapter.notifyDataSetChanged();
+                sarapanAdapter = new SingleAdapterSarapan(getApplicationContext(),listArray);
+                sarapan.setAdapter(sarapanAdapter);
+                sarapanAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -157,12 +146,19 @@ public class Tambahmknsiang extends AppCompatActivity {
             }
         });
     }
+
+    private void CheckData() {
+        if (listArray != null){
+            listArray.clear();
+            if (sarapanAdapter != null){
+                sarapanAdapter.notifyDataSetChanged();
+            }
+        }
+        listArray = new ArrayList<>();
+    }
+
     public void back(View view) {
         finish();
     }
 
-    public void lewati(View view) {
-        Intent intent = new Intent(Tambahmknsiang.this, Tambahmknmalam.class);
-        startActivity(intent);
-    }
 }

@@ -1,6 +1,8 @@
 package com.example.dokterdiabetesforelderly.CarboCalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,17 +16,28 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class HasilCarbocalculator extends AppCompatActivity {
+    RecyclerView recyclercarbo;
+    DatabaseReference mydb;
+    ArrayList<CarbocalculatorAdapter> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hasil_carbocalculator);
+
+        mydb = FirebaseDatabase.getInstance().getReference();
+
+        recyclercarbo = (RecyclerView) findViewById(R.id.recyclerHasilCarbo);
+        recyclercarbo.setLayoutManager(new LinearLayoutManager(this));
+        recyclercarbo.setHasFixedSize(true);
 
         //current date
         TextView textView = findViewById(R.id.dateHasilCarbo);

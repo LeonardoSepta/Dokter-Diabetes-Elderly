@@ -9,22 +9,18 @@
     android:orientation="vertical"
     >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:src="@drawable/logodokterdiabetes"
                     android:contentDescription="@string/todo">
-
                 </ImageView>
 
             </LinearLayout>
@@ -35,7 +31,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="MENU"
+                    android:text="@string/menu"
                     android:textSize="24sp"
                     android:textColor="#FFFFFF"
                     android:gravity="center_vertical|center_horizontal"
@@ -58,25 +54,18 @@
 
             </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginTop="30dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/backgroundmenu"
-                android:id="@+id/menu"
                 >
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
                 <GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:columnCount="2"
                     android:rowCount="5"
                     >
-
                     <androidx.cardview.widget.CardView
                         android:id="@+id/menuKonsultasi"
                         android:layout_width="wrap_content"
@@ -91,14 +80,14 @@
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
                         tools:targetApi="lollipop">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:gravity="center"
                             android:orientation="vertical"
-                            >
-
+                            tools:ignore="UseCompoundDrawables">
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="90dp"
@@ -113,8 +102,7 @@
                                 android:text="@string/konsultasi"
                                 android:textColor="#000000"
                                 android:textSize="20sp"
-                                android:textStyle="bold">
-                            </TextView>
+                                android:textStyle="bold"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -138,7 +126,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:gravity="center"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="90dp"
@@ -177,7 +166,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:gravity="center"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="90dp"
@@ -188,7 +178,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                android:text="Glukosa"
+                                android:text="@string/glukosa"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold"/>
@@ -215,14 +205,15 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:gravity="center"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="90dp"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/calculator_grey3"
-                                />
+                                android:contentDescription="@string/todo" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -257,14 +248,15 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:gravity="center"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:layout_width="90dp"
                                 android:layout_height="90dp"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/scales"
-                                />
+                                android:contentDescription="@string/todo" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -299,7 +291,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:gravity="center"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:layout_width="90dp"
@@ -341,7 +334,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical|center_horizontal"
                             android:gravity="center"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:layout_width="90dp"
@@ -364,11 +358,6 @@
                     </androidx.cardview.widget.CardView>
 
                 </GridLayout>
-
-                </ScrollView>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>
+

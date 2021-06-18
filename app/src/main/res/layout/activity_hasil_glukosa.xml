@@ -36,8 +36,8 @@
         </TextView>
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="30dp"
             android:src="@drawable/logodokterdiabetes">
@@ -63,13 +63,13 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_height="600dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/backgroundmenu">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="600dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     >
                     <!--Membuat current date-->
@@ -92,14 +92,46 @@
                         >
                     </com.github.mikephil.charting.charts.BarChart>
 
-                    <!--<androidx.recyclerview.widget.RecyclerView
+                    <TextView
+                        android:id="@+id/gulaDarahRendah"
+                        android:layout_below="@id/glukosaBarChart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/gula_darah_rendah_80_mg_dl"/>
+
+                    <TextView
+                        android:layout_below="@id/gulaDarahRendah"
+                        android:id="@+id/gulaDarahNormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Gula Darah Normal : 80 - 125 mg/dL"/>
+                    <TextView
+                        android:id="@+id/gulaDarahTinggiPuasa"
+                        android:layout_below="@id/gulaDarahNormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Gula Darah Tinggi : ≥ 126 mg/dL mg/dL (Puasa)"/>
+                    <TextView
+                        android:id="@+id/gulaDarahTinggi"
+                        android:layout_below="@id/gulaDarahTinggiPuasa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Gula Darah Tinggi : ≥ 200 mg/dL mg/dL (Sewaktu)"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_below="@+id/gulaDarahTinggi"
+                        android:id="@+id/recyclerGlukosa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                    </androidx.recyclerview.widget.RecyclerView>-->
+                    </androidx.recyclerview.widget.RecyclerView>
 
                     <Button
-                        android:layout_below="@+id/glukosaBarChart"
+                        android:layout_below="@+id/recyclerGlukosa"
                         android:onClick="dataGlukosa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.example.dokterdiabetesforelderly.CarboCalculator.AdapterTambahData;
+package com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.AdapterTambahData;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dokterdiabetesforelderly.CarboCalculator.Carbocalculator;
 import com.example.dokterdiabetesforelderly.CarboCalculator.PoolData;
-import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahmknmalam;
-import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahmknsiang;
 import com.example.dokterdiabetesforelderly.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,33 +22,32 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DataAdapterMknSiang extends RecyclerView.Adapter<DataAdapterMknSiang.viewHolder> {
+public class DataAdapterMknMalam extends RecyclerView.Adapter<DataAdapterMknMalam.viewHolder> {
     private Context context;
     private ArrayList<PoolData> dataList;
     DatabaseReference databaseReference;
     Map<String, Object> values = new HashMap<>();
 
     //fungsi declare adapter
-    public DataAdapterMknSiang(Context myContext, ArrayList<PoolData> list){
+    public DataAdapterMknMalam(Context myContext, ArrayList<PoolData> list){
         this.context = myContext;
         this.dataList = list;
     }
-
     @NonNull
     @Override
-    public DataAdapterMknSiang.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DataAdapterMknMalam.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layoutmenu,parent,false);
         return new viewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DataAdapterMknSiang.viewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DataAdapterMknMalam.viewHolder holder, int position) {
         holder.namaMenu.setText(dataList.get(position).getNama());
         holder.carboMenu.setText(dataList.get(position).getCarbo());
         holder.btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference getDataSarapan = FirebaseDatabase.getInstance().getReference().child("DataMakanSiang");
+                DatabaseReference getDataSarapan = FirebaseDatabase.getInstance().getReference().child("DataMakanMalam");
                 String randomID = getDataSarapan.push().getKey();
                 String nama = dataList.get(position).getNama();
                 String carbo = dataList.get(position).getCarbo();
@@ -58,9 +55,9 @@ public class DataAdapterMknSiang extends RecyclerView.Adapter<DataAdapterMknSian
                 values.put("nama", nama);
                 values.put("carbo",carbo);
                 getDataSarapan.child(randomID).setValue(values);
-                Toast.makeText(v.getContext(), "Masuk", Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "Data Ditambah", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(v.getContext(), Tambahmknmalam.class);
+                Intent intent = new Intent(v.getContext(), Carbocalculator.class);
                 v.getContext().startActivity(intent);
             }
         });
@@ -75,8 +72,7 @@ public class DataAdapterMknSiang extends RecyclerView.Adapter<DataAdapterMknSian
         void onRecycleListener(int position);
     }
 
-
-    public class viewHolder extends RecyclerView.ViewHolder {
+    public class viewHolder extends RecyclerView.ViewHolder{
         TextView namaMenu, carboMenu;
         ImageButton btnTambah;
         public viewHolder(@NonNull View itemView) {

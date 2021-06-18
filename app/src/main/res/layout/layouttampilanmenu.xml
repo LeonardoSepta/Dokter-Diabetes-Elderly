@@ -25,7 +25,7 @@
             android:text="@string/nama"
             android:textColor="@color/black"
             android:textStyle="bold"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints,RelativeOverlap"/>
 
         <TextView
             android:id="@+id/carboMenu"

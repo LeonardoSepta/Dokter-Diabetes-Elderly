@@ -41,7 +41,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="20sp"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints,RelativeOverlap" />
 
         <ImageButton
             android:id="@+id/btnTambah"
@@ -50,7 +50,8 @@
             android:layout_alignParentEnd="true"
             android:backgroundTint="#424242"
             android:src="@drawable/ic_baseline_add_circle_24"
-            tools:targetApi="lollipop" />
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo" />
         <!--<Button
             android:id="@+id/btnTambah"
             android:layout_width="wrap_content"

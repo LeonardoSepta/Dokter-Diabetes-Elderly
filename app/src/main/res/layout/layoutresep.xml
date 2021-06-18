@@ -8,19 +8,19 @@
 
     <RelativeLayout
         android:layout_margin="5dp"
-        android:background="@color/white"
+        android:background="@drawable/backgroundbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="3dp"
-        android:backgroundTint="#f2f2f2"
         android:id="@+id/id">
 
         <ImageView
             android:id="@+id/imgResep"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:paddingTop="10dp"
             android:src="@color/basecolor"
-            />
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/judulResep"
@@ -29,9 +29,8 @@
             android:layout_alignParentStart="true"
             android:textSize="20sp"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="20dp"
             android:layout_below="@id/imgResep"
-            android:text="Judul Resep"
+            android:text="@string/judul_resep"
             android:textColor="@color/black"
             tools:ignore="MissingConstraints"/>
 
@@ -42,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/judulResep"
-            android:text="Detail Resep"
+            android:text="@string/detail_resep"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:ellipsize="end"

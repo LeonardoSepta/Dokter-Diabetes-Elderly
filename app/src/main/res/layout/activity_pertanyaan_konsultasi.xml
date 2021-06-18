@@ -20,26 +20,27 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/basecolor"
-            android:src="@drawable/ic_baseline_navigate_before_24_white">
-        </ImageButton>
+            android:src="@drawable/ic_baseline_navigate_before_24_white"
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo" />
         <TextView
             android:onClick="back"
             android:layout_marginStart="40dp"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kembali"
+            android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             >
         </TextView>
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/logodokterdiabetes">
-        </ImageView>
+            android:src="@drawable/logodokterdiabetes"
+            android:contentDescription="@string/todo" />
     </RelativeLayout>
 
     <LinearLayout
@@ -48,8 +49,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pertanyaan Konsultasi"
+            android:text="@string/pertanyaan_konsultasi"
             android:textSize="24sp"
+            android:textStyle="bold"
             android:textColor="#FFFFFF"
             android:gravity="center_vertical|center_horizontal"
             android:layout_gravity="center">
@@ -58,8 +60,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="600dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/backgroundmenu"
         android:orientation="vertical">
 
@@ -68,16 +70,16 @@
             android:layout_height="wrap_content"
             android:src="@drawable/gambar_dokter_konsultasi"
             android:layout_gravity="center"
-            />
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Masukan Pertanyaan"
+            android:text="@string/masukan_pertanyaan"
             android:textColor="#000000"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp">
+            android:layout_marginStart="10dp">
         </TextView>
 
         <EditText
@@ -86,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="20dp"
-            android:hint="Judul Pertanyaan"
+            android:hint="@string/judul_pertanyaan"
             android:inputType="text"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
@@ -100,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="20dp"
-            android:hint="Detail Pertanyaan"
+            android:hint="@string/detail_pertanyaan"
             android:inputType="text"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
@@ -111,11 +113,12 @@
             android:onClick="buatPetanyaan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:backgroundTint="#a9a9a9"
-            android:text="Buat Pertanyaan"
+            android:text="@string/buat_pertanyaan"
             android:layout_gravity="center"
-            android:textColor="#000000">
+            android:textColor="#000000"
+            tools:targetApi="lollipop">
         </Button>
 
     </LinearLayout>

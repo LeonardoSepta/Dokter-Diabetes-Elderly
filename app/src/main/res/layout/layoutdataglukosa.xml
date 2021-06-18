@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:paddingBottom="5dp">
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backgroundpesan">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_item_konsultasi"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/removebg_logo_dokter_diabetes"
+            android:paddingStart="5dp"
+            tools:ignore="RtlSymmetry" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/img_item_konsultasi"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/dataListGlukosa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@string/data_list_glukosa"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mg_dl"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/dataListGlukosa"
+                />
+            <TextView
+                android:layout_below="@id/dataListGlukosa"
+                android:id="@+id/descdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="@string/tanggal_data_dimasukan"
+                android:textColor="@color/black"
+                android:paddingBottom="10dp"
+                />
+            <!--Membuat current date-->
+            <TextView
+                android:layout_below="@id/dataListGlukosa"
+                android:layout_toEndOf="@id/descdate"
+                android:id="@+id/dateListGlukosa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:paddingBottom="10dp"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

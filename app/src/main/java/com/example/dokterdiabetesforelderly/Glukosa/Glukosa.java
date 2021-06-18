@@ -58,8 +58,6 @@ public class Glukosa extends AppCompatActivity {
         //declare edittext
         numberGlukosa = (EditText) findViewById(R.id.numGlukosa);
 
-        /*tglGlukosa = (EditText) findViewById(R.id.tanggalGlukosa);*/
-
         puasa = (SwitchCompat) findViewById(R.id.puasa);
         //instansiasi database Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();

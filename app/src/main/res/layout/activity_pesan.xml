@@ -11,11 +11,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:src="@drawable/logodokterdiabetes">
         </ImageView>
@@ -49,22 +49,25 @@
         >
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/backgroundmenu">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listPesan"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/backgroundmenu">
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="550dp"
+                android:layout_marginTop="10dp"
+                >
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listPesan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </androidx.recyclerview.widget.RecyclerView>
+            </ScrollView>
          </LinearLayout>
-    </ScrollView>
+
 
 </LinearLayout>

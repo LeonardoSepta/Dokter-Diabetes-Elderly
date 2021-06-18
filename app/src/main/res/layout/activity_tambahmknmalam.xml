@@ -37,8 +37,8 @@
         </TextView>
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:src="@drawable/logodokterdiabetes"
             tools:ignore="ContentDescription">
@@ -51,9 +51,10 @@
             android:layout_marginEnd="45dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lewati"
+            android:text="@string/lewati"
             android:textColor="#FFFFFF"
-            android:textSize="20sp">
+            android:textSize="20sp"
+            tools:ignore="RelativeOverlap">
         </TextView>
         <ImageButton
             android:onClick="lewati"
@@ -63,7 +64,8 @@
             android:layout_centerVertical="true"
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_next_24"
-            />
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo" />
     </RelativeLayout>
 
     <LinearLayout
@@ -74,25 +76,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
+            android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Tambah Makan Malam"/>
+            android:text="@string/tambah_makan_malam"/>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:background="@drawable/backgroundmenu"
         android:layout_marginTop="20dp">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <AutoCompleteTextView
+            android:layout_margin="10dp"
+            android:id="@+id/searchMknMalam"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/mknmalam">
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
-
-
+            android:layout_height="40dp"
+            android:drawableStart="@drawable/ic_baseline_search"
+            android:background="@drawable/backgroundgrey"
+            tools:ignore="LabelFor" />
+        <ScrollView
+            android:layout_below="@+id/searchMknMalam"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mknmalam">
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+    </RelativeLayout>
 </LinearLayout>

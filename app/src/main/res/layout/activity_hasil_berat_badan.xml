@@ -22,27 +22,27 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_before_24_white"
-            tools:targetApi="lollipop">
-        </ImageButton>
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo" />
         <TextView
             android:onClick="back"
             android:layout_marginStart="40dp"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kembali"
+            android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             >
         </TextView>
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="30dp"
-            android:src="@drawable/logodokterdiabetes">
-        </ImageView>
+            android:src="@drawable/logodokterdiabetes"
+            android:contentDescription="@string/todo" />
 
     </RelativeLayout>
 
@@ -108,7 +108,7 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:backgroundTint="#808080"
-                        android:text="Masukan Data"
+                        android:text="@string/masukan_data"
                         android:textColor="#000000"
                         tools:targetApi="lollipop">
                     </Button>

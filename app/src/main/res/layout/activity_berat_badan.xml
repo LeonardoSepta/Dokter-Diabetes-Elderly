@@ -21,26 +21,28 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_before_24_white"
-            tools:targetApi="lollipop">
-        </ImageButton>
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo" />
+
         <TextView
             android:onClick="back"
             android:layout_marginStart="40dp"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kembali"
+            android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             >
         </TextView>
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="30dp"
-            android:src="@drawable/logodokterdiabetes">
+            android:src="@drawable/logodokterdiabetes"
+            android:contentDescription="@string/todo">
         </ImageView>
 
     </RelativeLayout>
@@ -51,7 +53,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Berat Badan (BMI)"
+            android:text="@string/berat_badan_bmi"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
@@ -62,19 +64,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="600dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/backgroundmenu"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Masukan Tinggi Badan:"
+            android:text="@string/masukan_tinggi_badan"
             android:textColor="#000000"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp">
+            android:layout_marginStart="10dp">
         </TextView>
 
         <EditText
@@ -83,12 +85,12 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="20dp"
-            android:hint="Ex: 160 cm"
+            android:hint="@string/ex_160_cm"
             android:inputType="number"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
-            android:textSize="20sp">
-        </EditText>
+            android:textSize="20sp"
+            tools:ignore="Autofill" />
 
         <TextView
             android:layout_width="250dp"
@@ -97,7 +99,7 @@
             android:textColor="#000000"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp">
+            android:layout_marginStart="10dp">
         </TextView>
 
         <EditText
@@ -110,17 +112,17 @@
             android:inputType="number"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
-            android:textSize="20sp">
-        </EditText>
+            android:textSize="20sp"
+            tools:ignore="Autofill" />
 
         <TextView
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Tanggal data dimasukkan:"
+            android:text="@string/tanggal_data_dimasukkan"
             android:textColor="#000000"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp">
+            android:layout_marginStart="10dp">
         </TextView>
 
         <!--Membuat current date-->
@@ -151,10 +153,11 @@
             android:onClick="SimpanBB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:backgroundTint="#a9a9a9"
             android:text="SIMPAN"
-            android:textColor="#000000">
+            android:textColor="#000000"
+            tools:targetApi="lollipop">
         </Button>
 
     </LinearLayout>

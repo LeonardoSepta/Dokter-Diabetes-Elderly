@@ -18,4 +18,7 @@ public class Shop extends AppCompatActivity {
     public void back(View view) {
         finish();
     }
+
+    public void menuArtikel(View view) {
+    }
 }

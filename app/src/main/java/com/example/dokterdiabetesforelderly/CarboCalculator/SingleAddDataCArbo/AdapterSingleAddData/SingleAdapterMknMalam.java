@@ -1,4 +1,4 @@
-package com.example.dokterdiabetesforelderly.CarboCalculator.AdapterTambahData;
+package com.example.dokterdiabetesforelderly.CarboCalculator.SingleAddDataCArbo.AdapterSingleAddData;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dokterdiabetesforelderly.CarboCalculator.Carbocalculator;
 import com.example.dokterdiabetesforelderly.CarboCalculator.PoolData;
-import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahmknmalam;
-import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tambahmknsiang;
 import com.example.dokterdiabetesforelderly.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,35 +22,34 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DataAdapterMknMalam extends RecyclerView.Adapter<DataAdapterMknMalam.viewHolder> {
-    private Context context;
-    private ArrayList<PoolData> dataList;
-    DatabaseReference databaseReference;
+public class SingleAdapterMknMalam extends RecyclerView.Adapter<SingleAdapterMknMalam.viewHolder> {
+    ArrayList<PoolData> mknmalamList;
+    Context context;
     Map<String, Object> values = new HashMap<>();
 
-    //fungsi declare adapter
-    public DataAdapterMknMalam(Context myContext, ArrayList<PoolData> list){
-        this.context = myContext;
-        this.dataList = list;
+    public SingleAdapterMknMalam (Context mycontext,ArrayList<PoolData> list){
+        this.context = mycontext;
+        this.mknmalamList = list;
     }
+
     @NonNull
     @Override
-    public DataAdapterMknMalam.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layoutmenu,parent,false);
         return new viewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DataAdapterMknMalam.viewHolder holder, int position) {
-        holder.namaMenu.setText(dataList.get(position).getNama());
-        holder.carboMenu.setText(dataList.get(position).getCarbo());
-        holder.btnTambah.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(@NonNull viewHolder holder, int position) {
+        holder.txNamaMenu.setText(mknmalamList.get(position).getNama());
+        holder.txCarboMenu.setText(mknmalamList.get(position).getCarbo());
+        holder.buttonTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatabaseReference getDataSarapan = FirebaseDatabase.getInstance().getReference().child("DataMakanMalam");
                 String randomID = getDataSarapan.push().getKey();
-                String nama = dataList.get(position).getNama();
-                String carbo = dataList.get(position).getCarbo();
+                String nama = mknmalamList.get(position).getNama();
+                String carbo = mknmalamList.get(position).getCarbo();
 
                 values.put("nama", nama);
                 values.put("carbo",carbo);
@@ -67,21 +64,18 @@ public class DataAdapterMknMalam extends RecyclerView.Adapter<DataAdapterMknMala
 
     @Override
     public int getItemCount() {
-        return dataList.size();
+        return mknmalamList.size();
     }
 
-    public interface OnRecycleListener {
-        void onRecycleListener(int position);
-    }
+    public class viewHolder extends RecyclerView.ViewHolder {
+        TextView txNamaMenu, txCarboMenu;
+        ImageButton buttonTambah;
 
-    public class viewHolder extends RecyclerView.ViewHolder{
-        TextView namaMenu, carboMenu;
-        ImageButton btnTambah;
         public viewHolder(@NonNull View itemView) {
             super(itemView);
-            namaMenu = itemView.findViewById(R.id.namaMenu);
-            carboMenu = itemView.findViewById(R.id.carboMenu);
-            btnTambah = itemView.findViewById(R.id.btnTambah);
+            txNamaMenu = itemView.findViewById(R.id.namaMenu);
+            txCarboMenu = itemView.findViewById(R.id.carboMenu);
+            buttonTambah = itemView.findViewById(R.id.btnTambah);
         }
     }
 }

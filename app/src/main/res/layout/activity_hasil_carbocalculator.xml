@@ -36,8 +36,8 @@
             />
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="30dp"
             android:src="@drawable/logodokterdiabetes"
@@ -53,10 +53,10 @@
                     android:layout_height="wrap_content"
                     android:text="Data Carbo Calculator"
                     android:textSize="24sp"
+                    android:textStyle="bold"
                     android:textColor="#FFFFFF"
                     android:gravity="center_vertical|center_horizontal"
                     android:layout_gravity="center"
-                    android:textStyle="bold"
                     tools:ignore="HardcodedText">
                 </TextView>
             </LinearLayout>
@@ -67,8 +67,8 @@
         >
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginTop="50dp"
+                android:layout_height="600dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/backgroundmenu"
                 android:orientation="vertical"
                 tools:ignore="HardcodedText">
@@ -93,9 +93,15 @@
                     >
                 </com.github.mikephil.charting.charts.BarChart>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_below="@+id/carboBarChart"
+                    android:id="@+id/recyclerHasilCarbo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
 
                 <Button
-                    android:layout_below="@+id/carboBarChart"
+                    android:layout_below="@+id/recyclerHasilCarbo"
                     android:onClick="dataCarboCal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

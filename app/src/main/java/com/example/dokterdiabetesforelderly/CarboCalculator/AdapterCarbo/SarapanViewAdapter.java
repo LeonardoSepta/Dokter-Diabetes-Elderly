@@ -29,8 +29,9 @@ import java.util.Map;
 public class SarapanViewAdapter extends RecyclerView.Adapter<SarapanViewAdapter.viewHolder> {
     private ArrayList<PoolData> sarapanList;
     private Context context;
+
     Map<String, Object> values = new HashMap<>();
-    //DatabaseReference sarapanDB;
+    DatabaseReference sarapanDB;
 
     public SarapanViewAdapter(Context mycontext, ArrayList<PoolData> list){
         this.context = mycontext;
@@ -45,24 +46,33 @@ public class SarapanViewAdapter extends RecyclerView.Adapter<SarapanViewAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-        //holder.itemView.setTag(position);
+    public void onBindViewHolder(@NonNull viewHolder holder,final int position) {
+        final PoolData dataID = sarapanList.get(position);
+
+        sarapanDB = FirebaseDatabase.getInstance().getReference().child("DataSarapan").child("randomID");
+        String randomID = sarapanDB.child("DataSarapan").push().getKey();
+        randomID.equals(dataID);
+
         holder.txNamaMenu.setText(sarapanList.get(position).getNama());
         holder.txCarboMenu.setText(sarapanList.get(position).getCarbo());
-        //holder.buttonHapus.setTag(sarapanList.get(position));
-
+        //holder.buttonHapus.setTag(sarapanList.get(position).getKey());
         holder.buttonHapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*sarapanDB.child(randomID).removeValue();*/
 
-                FirebaseDatabase.getInstance().getReference().child("DataSarapan")
+               sarapanDB = FirebaseDatabase.getInstance().getReference("DataSarapan");
+               sarapanDB.removeValue();
+
+               //FirebaseDatabase.getInstance().getReference("DataSarapan").child(sarapanList.get(position).getKey()).getRef().removeValue();
+
+               /* FirebaseDatabase.getInstance().getReference().child("DataSarapan")
                         .addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                                    //dataSnapshot.equals(sarapanList.get(position));
                                     //String randomID = dataSnapshot.getKey();
-                                    //dataSnapshot.child(randomID).getRef().removeValue();
+                                    //dataSnapshot.child(dataID.getKey()).getRef().removeValue();
                                     //dataSnapshot.getKey();
                                     dataSnapshot.getRef().removeValue();
                                 }
@@ -71,7 +81,24 @@ public class SarapanViewAdapter extends RecyclerView.Adapter<SarapanViewAdapter.
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
                             }
-                        });
+                        });*/
+
+             /* sarapanDB = FirebaseDatabase.getInstance().getReference("DataSarapan").child(dataID.getKey());
+                  sarapanDB.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                                    //String randomID = dataSnapshot.getKey();
+                                    //dataSnapshot.child(dataID.getKey()).getRef().removeValue();
+                                    //dataSnapshot.getKey();
+                                    dataSnapshot.getRef().removeValue();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                            }
+                        });*/
                 Toast.makeText(v.getContext(), "Data DiDihapus", Toast.LENGTH_SHORT).show();
             }
         });

@@ -21,8 +21,7 @@
             android:layout_alignParentStart="true"
             android:textSize="20sp"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="20dp"
-            android:text="Judul Pesan"
+            android:text="@string/judul_pesan"
             android:textColor="@color/black"
             tools:ignore="MissingConstraints"/>
 
@@ -33,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/judulPesan"
-            android:text="Detail Pesan"
+            android:text="@string/detail_pesan"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:textColor="#808080"

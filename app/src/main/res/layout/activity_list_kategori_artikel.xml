@@ -55,6 +55,7 @@
         android:layout_height="wrap_content"
         android:text="@string/artikel"
         android:textSize="24sp"
+        android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:gravity="center_vertical|center_horizontal"
         android:layout_gravity="center"

@@ -27,7 +27,7 @@ public class HasilBeratBadan extends AppCompatActivity {
         setContentView(R.layout.activity_hasil_berat_badan);
 
         //current date
-        TextView textView = findViewById(R.id.dateHasilCarbo);
+        TextView textView = findViewById(R.id.dateHasilBB);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String currentDate = simpleDateFormat.format(new Date());
         textView.setText(currentDate);

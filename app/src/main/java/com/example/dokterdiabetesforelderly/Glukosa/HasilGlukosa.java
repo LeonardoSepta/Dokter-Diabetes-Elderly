@@ -94,7 +94,6 @@ public class HasilGlukosa extends AppCompatActivity implements ValueEventListene
                 for (DataSnapshot dataGlukosa:snapshot.getChildren()){
                     ModelGlukosa modelGlukosa = new ModelGlukosa();
                     modelGlukosa.setDataglukosa(dataGlukosa.child("DataGulaDarah").getValue().toString());
-
                     arrayList.add(modelGlukosa);
                 }
                 adapterGlukosa = new AdapterGlukosa(getApplicationContext(),arrayList);

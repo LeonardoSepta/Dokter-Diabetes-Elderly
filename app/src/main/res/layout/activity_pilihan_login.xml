@@ -69,12 +69,12 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             >
             <androidx.cardview.widget.CardView
                 android:onClick="opsiLansia"
-                android:layout_width="165dp"
-                android:layout_height="190dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="0"
                 android:layout_rowWeight="1"
@@ -82,11 +82,12 @@
                 android:layout_gravity="fill"
                 android:layout_margin="8dp"
                 app:cardBackgroundColor="#cecece"
+                android:background="@drawable/backgroundbutton"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
                 tools:targetApi="lollipop">
                 <LinearLayout
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:gravity="center"
@@ -114,8 +115,8 @@
 
             <androidx.cardview.widget.CardView
                 android:onClick="opsiKeluarga"
-                android:layout_width="165dp"
-                android:layout_height="190dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 tools:ignore="OnClick"
                 android:layout_row="0"
                 android:layout_column="1"
@@ -123,12 +124,13 @@
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
                 android:layout_margin="8dp"
+                android:background="@drawable/backgroundbutton"
                 app:cardBackgroundColor="#cecece"
                 app:cardCornerRadius="8dp"
                 android:elevation="8dp"
                 tools:targetApi="lollipop">
                 <LinearLayout
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:gravity="center"

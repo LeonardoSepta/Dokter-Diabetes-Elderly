@@ -38,8 +38,9 @@ public class Resep extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent intent = new Intent(Resep.this, MainMenu.class);
+        finish();
+        /*Intent intent = new Intent(Resep.this, MainMenu.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
+        startActivity(intent);*/
     }
 }

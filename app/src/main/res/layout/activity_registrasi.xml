@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginLansia.Registrasi"
+    android:background="@color/basecolor"
+    android:orientation="vertical"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/removebg_logo_dokter_diabetes"
+                    android:contentDescription="@string/todo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="REGISTRASI LANSIA"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:layout_gravity="center"
+                    tools:ignore="HardcodedText"
+                    android:paddingBottom="10dp">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="460dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/backgroundmenu"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masukan Nomor Telphone: "
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    tools:ignore="HardcodedText,RtlHardcoded">
+
+                </TextView>
+                <EditText
+                    android:id="@+id/nomorRegis"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="Ex: 081-xxx-xxx-xxx"
+                    android:inputType="number"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,HardcodedText">
+                </EditText>
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="Masukan Password:"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    tools:ignore="HardcodedText,RtlHardcoded">
+                </TextView>
+                <EditText
+                    android:id="@+id/passRegis"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="Ex: 123456"
+                    android:inputType="numberPassword"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,HardcodedText">
+                </EditText>
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="Masukan Nama:"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    tools:ignore="HardcodedText,RtlHardcoded">
+                </TextView>
+                <EditText
+                    android:id="@+id/namaRegis"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="Siapakah nama anda?"
+                    android:inputType="text"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:ignore="Autofill,HardcodedText">
+                </EditText>
+
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin:"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    tools:ignore="HardcodedText,RtlHardcoded">
+                </TextView>
+                <RadioGroup
+                    android:id="@+id/genderRegis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    tools:ignore="RtlSymmetry">
+                        <RadioButton
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/radio_selector"
+                            android:button="@drawable/null_radio_button"
+                            android:textColor="@drawable/radio_text_selector"
+                            android:text="@string/laki_laki"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            />
+                        <RadioButton
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/radio_selector"
+                            android:button="@drawable/null_radio_button"
+                            android:textColor="@drawable/radio_text_selector"
+                            android:text="@string/perempuan"
+                            android:textSize="20sp"
+                            android:gravity="center"
+                            />
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/buttonRegis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/registrasi"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    tools:targetApi="lollipop" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudah punya akun?"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginHorizontal="40dp"
+                    tools:ignore="HardcodedText">
+                </TextView>
+
+                <Button
+                    android:id="@+id/pindahLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/login"
+                    android:textColor="@color/black"
+                    tools:ignore="HardcodedText,UnusedAttribute">
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -60,22 +60,34 @@
             android:text="@string/tambah_makan_siang"/>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:background="@drawable/backgroundmenu"
         android:layout_marginTop="20dp"
         android:orientation="vertical">
-        <!-- <SearchView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"/>-->
 
-        <androidx.recyclerview.widget.RecyclerView
+        <AutoCompleteTextView
+            android:layout_margin="10dp"
+            android:id="@+id/singleSearchMknSiang"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/singleaddmknsiang">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="40dp"
+            android:drawableStart="@drawable/ic_baseline_search"
+            android:background="@drawable/backgroundgrey"
+            tools:ignore="LabelFor" />
 
-    </LinearLayout>
+        <ScrollView
+            android:layout_below="@+id/singleSearchMknSiang"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/singleaddmknsiang">
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+
+
+    </RelativeLayout>
 
 </LinearLayout>

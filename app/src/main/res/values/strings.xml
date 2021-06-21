@@ -68,4 +68,7 @@
     <string name="detail_pesan">Detail Pesan</string>
     <string name="judul_resep">Judul Resep</string>
     <string name="detail_resep">Detail Resep</string>
+    <string name="laki_laki">Laki-laki</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="registrasi">Registrasi</string>
 </resources>

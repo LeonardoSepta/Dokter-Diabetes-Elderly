@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
+    tools:context=".LoginLansia.Login"
     android:background="@color/basecolor"
     android:orientation="vertical"
     >
@@ -18,7 +18,7 @@
         <ImageView
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:src="@drawable/removebg_logo_dokter_diabetes"
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="20dp"
-            android:hint="Ex: Kata sandi"
+            android:hint="Kata Sandi"
             android:inputType="numberPassword"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
@@ -134,7 +134,7 @@
         </TextView>
 
         <Button
-            android:id="@+id/buttonRegistrasi"
+            android:onClick="masukRegistrasiLansia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"

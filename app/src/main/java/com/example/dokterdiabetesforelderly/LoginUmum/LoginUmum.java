@@ -1,8 +1,10 @@
-package com.example.dokterdiabetesforelderly;
+package com.example.dokterdiabetesforelderly.LoginUmum;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.dokterdiabetesforelderly.R;
 
 public class LoginUmum extends AppCompatActivity {
 

@@ -29,10 +29,7 @@ import java.util.ArrayList;
 public class Tambahmknsiang extends AppCompatActivity {
     private RecyclerView mknsianglist;
     private DatabaseReference mydb, dbDataMknSiang;
-    //private ArrayList<PoolData> listArray;
-    //private ArrayList<GetDataIntent> data;
     private ArrayList<PoolData> listArray,arrayList;
-    //private CarboCalAdapter adapter;
     private DataAdapterMknSiang mknSiangAdapter;
     private AutoCompleteTextView searchdata;
 
@@ -45,8 +42,8 @@ public class Tambahmknsiang extends AppCompatActivity {
         mknsianglist.setLayoutManager(new LinearLayoutManager(this));
         mknsianglist.setHasFixedSize(true);
         mydb = FirebaseDatabase.getInstance().getReference();
-        listArray = new ArrayList<PoolData>();
-        arrayList = new ArrayList<PoolData>();
+        listArray = new ArrayList<>();
+        arrayList = new ArrayList<>();
 
         searchdata = (AutoCompleteTextView) findViewById(R.id.searchMknSiang);
         dbDataMknSiang = FirebaseDatabase.getInstance().getReference("makansiang");

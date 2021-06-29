@@ -22,14 +22,18 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 public class Login extends AppCompatActivity {
+    //variable
     EditText numberAkun;
     EditText passwordAkun;
     Button loginButton;
     private DatabaseReference dbLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //declare variable
         numberAkun = findViewById(R.id.userAkun);
         passwordAkun = findViewById(R.id.passAkun);
         loginButton = findViewById(R.id.buttonLogin);
@@ -97,5 +101,9 @@ public class Login extends AppCompatActivity {
     public void masukRegistrasiLansia(View view) {
         Intent intent = new Intent(Login.this,Registrasi.class);
         startActivity(intent);
+    }
+
+    public void back(View view) {
+        finish();
     }
 }

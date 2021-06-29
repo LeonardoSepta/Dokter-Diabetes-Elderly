@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainMenu.Profil"
     android:orientation="vertical"
-    android:background="#C70039">
+    android:background="@color/basecolor">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/bottomnavcolor"
+        android:background="@color/btmnavbackground"
         app:menu="@menu/menunavigasi"
         app:itemIconTint="@drawable/state_bottomnav"
         app:itemTextColor="@drawable/state_bottomnav"
@@ -53,7 +53,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/backgroundmenu"
         android:orientation="vertical">
         <LinearLayout
@@ -65,18 +65,18 @@
             android:orientation="horizontal"
             android:background="@drawable/backgroundbutton">
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_baseline_account_circle_24"
             android:contentDescription="@string/todo" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_081804109331"
+                android:text="@string/pengguna"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 />
         </LinearLayout>
 

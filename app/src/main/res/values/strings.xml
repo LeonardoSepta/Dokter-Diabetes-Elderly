@@ -71,4 +71,7 @@
     <string name="laki_laki">Laki-laki</string>
     <string name="perempuan">Perempuan</string>
     <string name="registrasi">Registrasi</string>
+    <string name="pengguna">Pengguna</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
 </resources>

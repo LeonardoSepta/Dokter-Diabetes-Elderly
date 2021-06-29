@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -50,7 +51,7 @@ public class Registrasi extends AppCompatActivity {
                 nomorRegistrasi.requestFocus();
                 return;
             }
-            if (nomor.length() < 10){
+            if (nomor.length() < 12){
                 nomorRegistrasi.setError("Nomor belum sesuai");
                 nomorRegistrasi.requestFocus();
                 return;
@@ -61,7 +62,7 @@ public class Registrasi extends AppCompatActivity {
                 return;
             }
             if (password.length() < 5 ){
-                passRegistrasi.setError("katasandi kurang panjang");
+                passRegistrasi.setError("Katasandi kurang panjang");
                 passRegistrasi.requestFocus();
                 return;
             }
@@ -80,5 +81,14 @@ public class Registrasi extends AppCompatActivity {
             });
 
         });
+    }
+
+    public void pindahLogin(View view) {
+        Intent intent = new Intent(Registrasi.this, Login.class);
+        startActivity(intent);
+    }
+
+    public void back(View view) {
+        finish();
     }
 }

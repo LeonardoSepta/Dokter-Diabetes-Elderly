@@ -11,7 +11,8 @@
     <RelativeLayout
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/backgroundpesan">
+        android:background="@drawable/backgroundpesan"
+        tools:ignore="UselessParent">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_item_konsultasi"
             android:layout_width="55dp"
@@ -56,18 +57,29 @@
                 android:textSize="15sp"
                 android:text="@string/tanggal_data_dimasukan"
                 android:textColor="@color/black"
-                android:paddingBottom="10dp"
+                android:paddingBottom="5dp"
                 />
             <!--Membuat current date-->
             <TextView
                 android:layout_below="@id/dataListGlukosa"
+                android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/descdate"
                 android:id="@+id/dateListGlukosa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:textColor="@color/black"
+                android:paddingBottom="5dp"
+                android:paddingStart="5dp"
+                tools:ignore="RtlSymmetry" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/puasa"
+                android:textSize="20sp"
                 android:paddingBottom="10dp"
+                android:textColor="@color/black"
+                android:layout_below="@id/dateListGlukosa"
                 />
         </RelativeLayout>
     </RelativeLayout>

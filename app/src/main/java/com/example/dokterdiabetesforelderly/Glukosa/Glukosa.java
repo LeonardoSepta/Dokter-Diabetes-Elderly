@@ -23,9 +23,9 @@ import java.util.Map;
 
 public class Glukosa extends AppCompatActivity {
     EditText numberGlukosa;
-    EditText tglGlukosa;
-    SwitchCompat puasa;
-    ArrayList<ModelGlukosa> modelGlukosa;
+    //EditText tglGlukosa;
+    /*SwitchCompat switchCompatPuasa;*/
+    //ArrayList<ModelGlukosa> modelGlukosa;
     Map<String, Object> values = new HashMap<>();
 
     @Override
@@ -46,23 +46,25 @@ public class Glukosa extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public EditText getNumberGlukosa() {
+    /*public EditText getNumberGlukosa() {
         return numberGlukosa;
-    }
+    }*/
 
-    public void setNumberGlukosa(EditText numberGlukosa) {
+    /*public void setNumberGlukosa(EditText numberGlukosa) {
         this.numberGlukosa = numberGlukosa;
-    }
+    }*/
 
     public void SimpanGlukosa(View view) {
         //declare edittext
-        numberGlukosa = (EditText) findViewById(R.id.numGlukosa);
+        numberGlukosa = findViewById(R.id.numGlukosa);
+        /*switchCompatPuasa = findViewById(R.id.puasa);*/
 
-        puasa = (SwitchCompat) findViewById(R.id.puasa);
         //instansiasi database Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         //declare database yg dituju
         DatabaseReference mydb = database.getReference("DataGlukosa");
+
         //memberi nilai pada database yg dituju
         String randomID = mydb.push().getKey();
         String Dataguladarah = numberGlukosa.getText().toString();

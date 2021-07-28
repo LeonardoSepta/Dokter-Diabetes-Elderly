@@ -36,9 +36,9 @@ public class HasilBeratBadan extends AppCompatActivity {
         BarChart barChart = (BarChart) findViewById(R.id.bbBarChart);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(160f, 0));
+        entries.add(new BarEntry(24.5f, 0));
 
-        BarDataSet barDataSet = new BarDataSet(entries, "Cells");
+        BarDataSet barDataSet = new BarDataSet(entries, "Data");
 
         ArrayList<String> labels = new ArrayList<String>();
         labels.add("Data Berat Badan");
@@ -46,7 +46,8 @@ public class HasilBeratBadan extends AppCompatActivity {
         BarData data = new BarData(labels, barDataSet);
         barChart.setData(data); // set the data and list of labels into chart
         barChart.setDescription("Berat Badan Normal");
-        barChart.setDescriptionPosition(500,60);
+        barChart.setDescriptionTextSize(20);
+        barChart.setDescriptionPosition(500,70);
         //barDataSet.setColor(Integer.parseInt("#C70039"));
         barDataSet.setValueTextSize(20);
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);

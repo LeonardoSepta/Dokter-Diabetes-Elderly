@@ -4,31 +4,37 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 
-import com.example.dokterdiabetesforelderly.Artikel.ArtikelAdapter;
-import com.example.dokterdiabetesforelderly.Artikel.ArtikelData;
-import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
 import com.example.dokterdiabetesforelderly.R;
 
 import java.util.ArrayList;
 
 public class Resep extends AppCompatActivity {
     private RecyclerView recyclerViewResep;
-    private ArrayList<ModelResep> listResep = new ArrayList<>();
+    private final ArrayList<ModelResep> listResep = new ArrayList<>();
+    AutoCompleteTextView searchdata;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resep);
 
+        //recycler
         recyclerViewResep = findViewById(R.id.listResep);
         recyclerViewResep.setHasFixedSize(true);
 
         listResep.addAll(ResepData.getListData());
         showRecyclerListResep();
+
+        //search data
+        /*ArrayList<ModelResep> arrayList = new ArrayList<>();*/
+        searchdata = findViewById(R.id.searchResep);
+
+
     }
 
     private void showRecyclerListResep() {

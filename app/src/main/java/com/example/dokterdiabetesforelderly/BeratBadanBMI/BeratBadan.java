@@ -15,10 +15,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BeratBadan extends AppCompatActivity {
     private EditText numberTinggi,numberBB;
-
+    Map<String, Object> values = new HashMap<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +48,16 @@ public class BeratBadan extends AppCompatActivity {
         //instansiasi database Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //declare database yg dituju
-        DatabaseReference mydb = database.getReference("DataGlukosa");
+        DatabaseReference mydb = database.getReference("DataBeratBadan");
         //memberi nilai pada database yg dituju
-        mydb.child("DataBB").setValue(numberBB.getText().toString());
-        mydb.child("DataTinggi").setValue(numberTinggi.getText().toString());
+        String randomID = mydb.push().getKey();
+        String DataBeratBadan = numberBB.getText().toString();
+        String DataTinggiBadan = numberTinggi.getText().toString();
+        values.put("DataBB",DataBeratBadan);
+        values.put("DataTinggi",DataTinggiBadan);
 
         /*mydb.child("TglDataBB").setValue(tglBB.getText().toString());*/
-
+        mydb.child(randomID).setValue(values);
         Intent intent = new Intent(BeratBadan.this, HasilBeratBadan.class);
         startActivity(intent);
     }

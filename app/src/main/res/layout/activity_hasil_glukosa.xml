@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,7 +20,9 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_before_24_white"
-            tools:targetApi="lollipop">
+            tools:targetApi="lollipop"
+            android:contentDescription="@string/todo"
+            tools:ignore="UsingOnClickInXml">
         </ImageButton>
         <TextView
             android:onClick="back"
@@ -29,10 +30,10 @@
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kembali"
+            android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            >
+            tools:ignore="UsingOnClickInXml">
         </TextView>
 
         <ImageView
@@ -40,7 +41,8 @@
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="30dp"
-            android:src="@drawable/logodokterdiabetes">
+            android:src="@drawable/logodokterdiabetes"
+            android:contentDescription="@string/todo">
         </ImageView>
 
     </RelativeLayout>
@@ -98,6 +100,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
                         android:text="@string/gula_darah_rendah_80_mg_dl"/>
 
                     <TextView
@@ -106,21 +110,27 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Gula Darah Normal : 80 - 125 mg/dL"/>
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="@string/gula_darah_normal_80_125_mg_dl"/>
                     <TextView
                         android:id="@+id/gulaDarahTinggiPuasa"
                         android:layout_below="@id/gulaDarahNormal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Gula Darah Tinggi : ≥ 126 mg/dL mg/dL (Puasa)"/>
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="@string/gula_darah_tinggi_126_mg_dl_mg_dl_puasa"/>
                     <TextView
                         android:id="@+id/gulaDarahTinggi"
                         android:layout_below="@id/gulaDarahTinggiPuasa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="Gula Darah Tinggi : ≥ 200 mg/dL mg/dL (Sewaktu)"/>
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="@string/gula_darah_tinggi_200_mg_dl_mg_dl_sewaktu"/>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:layout_below="@+id/gulaDarahTinggi"
@@ -139,9 +149,11 @@
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
                         android:backgroundTint="#808080"
-                        android:text="Masukan Data"
+                        android:text="@string/masukan_data"
                         android:textColor="#000000"
-                        tools:targetApi="lollipop">
+                        tools:targetApi="lollipop"
+                        android:layout_alignParentEnd="true"
+                        tools:ignore="UsingOnClickInXml">
                     </Button>
 
                 </RelativeLayout>

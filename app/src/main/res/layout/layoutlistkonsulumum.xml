@@ -5,53 +5,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:padding="10dp"
+    android:paddingBottom="5dp"
     >
 
     <RelativeLayout
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:background="@drawable/backgroundpesan"
-        android:padding="10dp">
+        tools:ignore="UselessParent">
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img_item_artikel"
+            android:id="@+id/img_item_konsultasi"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_marginEnd="16dp"
             android:layout_centerVertical="true"
+            android:src="@drawable/logo_dokter_diabetes"
             android:paddingStart="5dp"
-            tools:src="@color/basecolor"
-            />
+            tools:ignore="RtlSymmetry" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/img_item_artikel"
+            android:layout_toEndOf="@id/img_item_konsultasi"
             android:orientation="vertical"
+            android:padding="10dp"
             >
             <TextView
-                android:id="@+id/judulArtikel"
-                android:layout_width="match_parent"
+                android:id="@+id/idKonsultasi"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:text="@string/judul_artikel"
+                android:text="Id Konsultasi"
                 android:textColor="@color/black"
                 />
 
             <TextView
-                android:id="@+id/detailArtikel"
+                android:id="@+id/txKonsultasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:layout_below="@id/judulArtikel"
-                android:text="@string/detail_artikel"
+                android:layout_below="@id/idKonsultasi"
+                android:text="Judul Konsultasi"
                 android:textColor="@color/black"
                 />
+
+            <TextView
+                android:id="@+id/tglKonsultasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Tanggal Konsultasi"
+                android:textColor="@color/black"
+                android:layout_alignParentEnd="true"
+                android:paddingEnd="10dp"
+                tools:ignore="RtlSymmetry" />
         </RelativeLayout>
     </RelativeLayout>
-
-
 </RelativeLayout>

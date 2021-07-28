@@ -23,6 +23,7 @@ public class DetailKonsultasi extends AppCompatActivity {
         TextView txIdKonsultasi = findViewById(R.id.textIdKonsultasi);
         TextView txDetailKonsultasi = findViewById(R.id.textDetailKonsultasi);
         TextView txJawabanKonsultasi = findViewById(R.id.textJawabanKonsultasi);
+        TextView txTglKonsultasi = findViewById(R.id.textTglKonsultasi);
 
         ModelKonsultasi modelKonsultasi = getIntent().getParcelableExtra(ITEM_EXTRA);
         if (modelKonsultasi != null){
@@ -32,6 +33,7 @@ public class DetailKonsultasi extends AppCompatActivity {
             txIdKonsultasi.setText(modelKonsultasi.getId());
             txDetailKonsultasi.setText(modelKonsultasi.getDetail());
             txJawabanKonsultasi.setText(modelKonsultasi.getJawaban());
+            txTglKonsultasi.setText(modelKonsultasi.getTanggal());
         }
     }
 

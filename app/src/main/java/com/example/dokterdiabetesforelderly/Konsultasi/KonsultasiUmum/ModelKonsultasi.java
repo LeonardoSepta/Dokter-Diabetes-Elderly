@@ -8,6 +8,7 @@ public class ModelKonsultasi implements Parcelable {
     private String judul;
     private String detail;
     private String jawaban;
+    private String tanggal;
     private int photo;
 
     //constructor
@@ -20,6 +21,7 @@ public class ModelKonsultasi implements Parcelable {
         judul = in.readString();
         detail = in.readString();
         jawaban = in.readString();
+        tanggal = in.readString();
         photo = in.readInt();
     }
 
@@ -34,6 +36,18 @@ public class ModelKonsultasi implements Parcelable {
             return new ModelKonsultasi[size];
         }
     };
+
+    public String getTanggal() {
+        return tanggal;
+    }
+
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
+    }
+
+    public static Creator<ModelKonsultasi> getCREATOR() {
+        return CREATOR;
+    }
 
     public String getId() {
         return id;
@@ -86,6 +100,7 @@ public class ModelKonsultasi implements Parcelable {
         dest.writeString(judul);
         dest.writeString(detail);
         dest.writeString(jawaban);
+        dest.writeString(tanggal);
         dest.writeInt(photo);
     }
 }

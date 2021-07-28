@@ -17,7 +17,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:src="@drawable/logodokterdiabetes">
+            android:src="@drawable/logodokterdiabetes"
+            android:contentDescription="@string/todo">
         </ImageView>
     </LinearLayout>
 
@@ -28,7 +29,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PESAN"
+            android:text="@string/pesan"
             android:textSize="24sp"
             android:textColor="#FFFFFF"
             android:gravity="center_vertical|center_horizontal"
@@ -60,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="550dp"
                 android:layout_marginTop="10dp"
-                >
+                tools:ignore="UselessParent">
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listPesan"
                     android:layout_width="match_parent"

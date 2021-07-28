@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
@@ -26,6 +29,8 @@ public class Login extends AppCompatActivity {
     EditText numberAkun;
     EditText passwordAkun;
     Button loginButton;
+    ImageView lihatPassword;
+
     private DatabaseReference dbLogin;
 
     @Override
@@ -37,6 +42,29 @@ public class Login extends AppCompatActivity {
         numberAkun = findViewById(R.id.userAkun);
         passwordAkun = findViewById(R.id.passAkun);
         loginButton = findViewById(R.id.buttonLogin);
+        lihatPassword = findViewById(R.id.lihatPass);
+
+        //show/hide Password
+        lihatPassword.setOnClickListener(v -> {
+            //ShowHidePass();
+            if(lihatPassword.getId()==R.id.lihatPass){
+
+                if(passwordAkun.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+                    lihatPassword.setImageResource(R.drawable.ic_baseline_visibilitypass_off);
+
+                    //Show Password
+                    passwordAkun.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+                else{
+                    lihatPassword.setImageResource(R.drawable.ic_baseline_visibilitypass);
+
+                    //Hide Password
+                    passwordAkun.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+                }
+            }
+
+        });
 
         //login();
         dbLogin = FirebaseDatabase.getInstance().getReference("userlansia");
@@ -81,7 +109,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    private void login() {
+    /*private void login() {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +124,7 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-    }
+    }*/
 
     public void masukRegistrasiLansia(View view) {
         Intent intent = new Intent(Login.this,Registrasi.class);

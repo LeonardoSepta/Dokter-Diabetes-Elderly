@@ -35,9 +35,9 @@ public class HasilCarbocalculator extends AppCompatActivity {
 
         mydb = FirebaseDatabase.getInstance().getReference();
 
-        recyclercarbo = (RecyclerView) findViewById(R.id.recyclerHasilCarbo);
+/*        recyclercarbo = (RecyclerView) findViewById(R.id.recyclerHasilCarbo);
         recyclercarbo.setLayoutManager(new LinearLayoutManager(this));
-        recyclercarbo.setHasFixedSize(true);
+        recyclercarbo.setHasFixedSize(true);*/
 
         //current date
         TextView textView = findViewById(R.id.dateHasilCarbo);
@@ -49,7 +49,7 @@ public class HasilCarbocalculator extends AppCompatActivity {
         BarChart barChart = (BarChart) findViewById(R.id.carboBarChart);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(350f, 0));
+        entries.add(new BarEntry(400f, 0));
 
         BarDataSet barDataSet = new BarDataSet(entries, "Cells");
 

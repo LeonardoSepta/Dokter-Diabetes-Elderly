@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/konsultasiuserlain"
-        android:title="Konsultasi Responden"
-        android:icon="@drawable/ic_baseline_chat_bubble_24"/>
+        android:id="@+id/konsulsemua"
+        android:title="@string/semua"
+        />
     <item
-        android:id="@+id/konsultasiuser"
-        android:title="Pertanyaan Konsultasi Saya"
-        android:icon="@drawable/ic_baseline_message_24"/>
+        android:id="@+id/konsuldiet"
+        android:title="@string/diet"
+        />
+    <item
+        android:id="@+id/konsulolahraga"
+        android:title="@string/olahraga"
+        />
+
 </menu>

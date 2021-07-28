@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/beranda"
-        android:title="BERANDA"
+        android:title="@string/beranda"
         android:icon="@drawable/ic_baseline_home_24"/>
     <item
         android:id="@+id/pesan"
-        android:title="PESAN"
+        android:title="@string/pesan"
         android:icon="@drawable/ic_baseline_message_24"/>
     <item
         android:id="@+id/profil"
-        android:title="PROFIL"
+        android:title="@string/profil"
         android:icon="@drawable/ic_baseline_account_circle_24_white"/>
 </menu>

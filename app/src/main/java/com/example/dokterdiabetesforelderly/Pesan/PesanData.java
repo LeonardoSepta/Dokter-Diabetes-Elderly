@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class PesanData {
     private static String[] judulDataPesan = {
-            "Kompetisi Konsultasi Dokter Diabetes",
+            "Kompetisi KonsultasiDiet Dokter Diabetes",
             "Update Apps",
             "Fakta Karbohidrat yang Perlu Anda Tahu"
 

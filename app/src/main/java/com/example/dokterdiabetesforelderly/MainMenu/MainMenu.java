@@ -13,7 +13,7 @@ import com.example.dokterdiabetesforelderly.CarboCalculator.TambahDataCarbo.Tamb
 import com.example.dokterdiabetesforelderly.Pesan.Pesan;
 import com.example.dokterdiabetesforelderly.R;
 import com.example.dokterdiabetesforelderly.Resep.Resep;
-import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum.Konsultasi;
+import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum.KonsultasiDiet;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.DataBeratBadan;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.DataGlukosa;
 import com.example.dokterdiabetesforelderly.StepAfterMainMenu.ListKategoriArtikel;
@@ -114,7 +114,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void OpenKonsultasi (){
-        Intent intent = new Intent(MainMenu.this, Konsultasi.class);
+        Intent intent = new Intent(MainMenu.this, KonsultasiDiet.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

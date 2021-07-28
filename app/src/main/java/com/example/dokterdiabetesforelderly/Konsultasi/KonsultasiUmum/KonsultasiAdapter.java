@@ -27,7 +27,7 @@ public class KonsultasiAdapter extends RecyclerView.Adapter<KonsultasiAdapter.vi
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layoutlistkonsultasi,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layoutlistkonsulumum,parent,false);
         return new viewHolder(view);
     }
 
@@ -37,6 +37,7 @@ public class KonsultasiAdapter extends RecyclerView.Adapter<KonsultasiAdapter.vi
         Glide.with(holder.itemView.getContext()).load(konsultasi.getPhoto()).apply(new RequestOptions().override(55,55)).into(holder.imgPhoto);
         holder.idTextKonsultasi.setText(konsultasi.getId());
         holder.judulTextKonsultasi.setText(konsultasi.getJudul());
+        holder.tanggalKonsultasi.setText(konsultasi.getTanggal());
 
 
         holder.itemView.setOnClickListener(v -> {
@@ -53,13 +54,14 @@ public class KonsultasiAdapter extends RecyclerView.Adapter<KonsultasiAdapter.vi
 
     public class viewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView idTextKonsultasi, judulTextKonsultasi;
+        TextView idTextKonsultasi, judulTextKonsultasi,tanggalKonsultasi;
 
         public viewHolder(View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_konsultasi);
             idTextKonsultasi = itemView.findViewById(R.id.idKonsultasi);
             judulTextKonsultasi = itemView.findViewById(R.id.txKonsultasi);
+            tanggalKonsultasi = itemView.findViewById(R.id.tglKonsultasi);
         }
     }
 }

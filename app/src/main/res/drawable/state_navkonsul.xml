@@ -3,7 +3,6 @@
     <item
         android:color="@color/white"
         android:state_checked="true"
-        android:drawable="@drawable/selected_bottomnav"
         />
     <item android:color="#e899af"/>
 </selector>

@@ -23,7 +23,8 @@
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_before_24_white"
             tools:targetApi="lollipop"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            tools:ignore="UsingOnClickInXml" />
         <TextView
             android:onClick="back"
             android:layout_marginStart="40dp"
@@ -33,7 +34,7 @@
             android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            >
+            tools:ignore="UsingOnClickInXml">
         </TextView>
 
         <ImageView
@@ -74,7 +75,7 @@
             android:textColor="#000000"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp">
+            android:layout_marginStart="20dp">
         </TextView>
 
         <EditText
@@ -87,7 +88,8 @@
             android:inputType="number"
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
-            android:textSize="20sp">
+            android:textSize="20sp"
+            tools:ignore="Autofill">
         </EditText>
 
 
@@ -98,13 +100,13 @@
             android:textColor="#000000"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp">
+            android:layout_marginStart="20dp">
         </TextView>
 
         <!--Membuat current date-->
         <TextView
             android:id="@+id/dateGlukosa"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
@@ -131,7 +133,7 @@
             android:layout_height="wrap_content"
             android:text="@string/puasa"
             android:textSize="20sp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             >
         </androidx.appcompat.widget.SwitchCompat>
 
@@ -141,10 +143,11 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#a9a9a9"
             android:text="@string/simpan"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
-            tools:targetApi="lollipop">
+            tools:targetApi="lollipop"
+            tools:ignore="UsingOnClickInXml">
         </Button>
     </LinearLayout>
 </LinearLayout>

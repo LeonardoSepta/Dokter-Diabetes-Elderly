@@ -23,7 +23,8 @@
             android:backgroundTint="@color/basecolor"
             android:src="@drawable/ic_baseline_navigate_before_24_white"
             tools:targetApi="lollipop"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            tools:ignore="UsingOnClickInXml" />
         <TextView
             android:onClick="back"
             android:layout_marginStart="40dp"
@@ -33,7 +34,7 @@
             android:text="@string/kembali"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            >
+            tools:ignore="UsingOnClickInXml">
         </TextView>
 
         <ImageView
@@ -66,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/backgroundmenu"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 >
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -98,19 +99,41 @@
                         android:layout_height="wrap_content">
 
                     </androidx.recyclerview.widget.RecyclerView>-->
+                    <TextView
+                        android:id="@+id/textBMIrange"
+                        android:layout_below="@id/bbBarChart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/kisaran_bmi_yang_sehat"/>
+
+                    <TextView
+                        android:id="@+id/textBMIrange2"
+                        android:layout_below="@id/textBMIrange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="15dp"
+                        android:text="@string/_18_5_kg_m2_25_kg_m2"/>
 
                     <Button
-                        android:layout_below="@+id/bbBarChart"
+                        android:layout_below="@+id/textBMIrange2"
                         android:onClick="dataBeratBadan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical|center_horizontal"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
-                        android:backgroundTint="#808080"
+                        android:backgroundTint="#a9a9a9"
                         android:text="@string/masukan_data"
-                        android:textColor="#000000"
-                        tools:targetApi="lollipop">
+                        android:textColor="@color/black"
+                        tools:targetApi="lollipop"
+                        tools:ignore="UsingOnClickInXml">
                     </Button>
 
                 </RelativeLayout>

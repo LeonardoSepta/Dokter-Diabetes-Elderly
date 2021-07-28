@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/logo_dokter_diabetes_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DokterDiabetesForElderly">
+        <activity android:name=".Konsultasi.KonsultasiUmum.KonsultasiOlahraga"></activity>
         <activity android:name=".LoginUmum.RegistrasiUmum" />
         <activity android:name=".LoginLansia.Registrasi" />
         <activity android:name=".PilihanLogin" />
@@ -33,7 +34,7 @@
         <activity android:name=".Glukosa.HasilGlukosa" />
         <activity android:name=".Konsultasi.KonsultasiUser" />
         <activity android:name=".Konsultasi.PertanyaanKonsultasi" />
-        <activity android:name=".Konsultasi.KonsultasiUmum.Konsultasi" />
+        <activity android:name=".Konsultasi.KonsultasiUmum.KonsultasiDiet" />
         <activity android:name=".Glukosa.Glukosa" />
         <activity android:name=".CarboCalculator.HasilCarbocalculator" />
         <activity android:name=".Artikel.ArtikelInfoDiabetes" />
@@ -48,6 +49,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

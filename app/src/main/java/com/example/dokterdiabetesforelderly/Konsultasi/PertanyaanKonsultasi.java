@@ -5,11 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-
-import com.example.dokterdiabetesforelderly.Glukosa.HasilGlukosa;
-import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum.Konsultasi;
 
 import com.example.dokterdiabetesforelderly.R;
 import com.google.firebase.database.DatabaseReference;
@@ -19,8 +15,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PertanyaanKonsultasi extends AppCompatActivity {
-    private EditText judul ;
-    private EditText pertanyaan;
     Map<String, Object> values = new HashMap<>();
 
     @Override
@@ -36,8 +30,8 @@ public class PertanyaanKonsultasi extends AppCompatActivity {
 
     public void buatPetanyaan(View view) {
         //declare edittext
-        pertanyaan = (EditText) findViewById(R.id.detailPertanyaan);
-        judul = (EditText) findViewById(R.id.judulPertanyaan);
+        EditText pertanyaan = findViewById(R.id.detailPertanyaan);
+        EditText judul = findViewById(R.id.judulPertanyaan);
         //instansiasi database Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //declare database yg dituju

@@ -4,15 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.app.ApplicationExitInfo;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
-import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum.Konsultasi;
 import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUser;
 import com.example.dokterdiabetesforelderly.MainActivity;
 import com.example.dokterdiabetesforelderly.Pesan.Pesan;

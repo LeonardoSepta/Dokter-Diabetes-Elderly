@@ -58,7 +58,7 @@
             android:textColor="@color/white"
             android:layout_marginTop="5dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Carbo Calculator"
+            android:text="@string/carbo_calculator"
             android:paddingBottom="10dp"
             />
     </LinearLayout>
@@ -83,7 +83,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="Tanggal/Bulan/Tahun data hari ini"
+                android:text="@string/tanggal_bulan_tahun_data_hari_ini"
                 tools:ignore="RtlSymmetry" />
 
             <!--Membuat current date-->
@@ -155,7 +155,7 @@
                     android:paddingStart="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Data Sarapan"
+                    android:text="@string/data_sarapan"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -191,7 +191,7 @@
                     android:paddingStart="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Data Makan Siang"
+                    android:text="@string/data_makan_siang"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -229,7 +229,7 @@
                     android:paddingStart="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Data Makan Malam"
+                    android:text="@string/data_makan_malam"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="20sp"

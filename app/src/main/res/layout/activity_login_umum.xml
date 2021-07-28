@@ -67,29 +67,30 @@
     <!--    android:layout_marginTop="120dp"-->
     <!--    android:layout_marginBottom="10dp"-->
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/backgroundmenu"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/textidumum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Masukan Username Anda: "
+            android:text="Masukan Username: "
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             tools:ignore="HardcodedText,RtlHardcoded">
-
         </TextView>
         <EditText
+            android:layout_below="@+id/textidumum"
             android:id="@+id/usernameLogin"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="10dp"
             android:hint="Username"
             android:inputType="text"
             android:layout_marginTop="10dp"
@@ -98,6 +99,8 @@
             tools:ignore="Autofill,HardcodedText">
         </EditText>
         <TextView
+            android:layout_below="@+id/usernameLogin"
+            android:id="@+id/textpassumum"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:text="Masukan Password:"
@@ -108,11 +111,12 @@
             tools:ignore="HardcodedText,RtlHardcoded">
         </TextView>
         <EditText
+            android:layout_below="@id/textpassumum"
             android:id="@+id/passLogin"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="10dp"
             android:hint="Kata Sandi"
             android:inputType="numberPassword"
             android:layout_marginTop="10dp"
@@ -120,8 +124,18 @@
             android:textSize="20sp"
             tools:ignore="Autofill,HardcodedText">
         </EditText>
+        <ImageView
+            android:layout_below="@+id/textpassumum"
+            android:layout_toEndOf="@+id/passLogin"
+            android:id="@+id/lihatPassUmum"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_visibilitypass"
+            android:contentDescription="@string/todo" />
 
-    </LinearLayout>
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

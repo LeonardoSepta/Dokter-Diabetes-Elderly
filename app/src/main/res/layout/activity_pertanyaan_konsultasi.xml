@@ -49,7 +49,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pertanyaan_konsultasi"
+            android:text="@string/konsultasi_dokter"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"

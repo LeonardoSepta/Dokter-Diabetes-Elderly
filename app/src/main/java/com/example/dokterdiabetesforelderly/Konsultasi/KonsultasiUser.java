@@ -7,17 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
+/*import android.widget.RelativeLayout;
 
-import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum.Konsultasi;
-import com.example.dokterdiabetesforelderly.Konsultasi.KonsultasiUmum.ModelKonsultasi;
-import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;
+import com.example.dokterdiabetesforelderly.KonsultasiDiet.KonsultasiUmum.KonsultasiDiet;
+import com.example.dokterdiabetesforelderly.KonsultasiDiet.KonsultasiUmum.ModelKonsultasi;
+import com.example.dokterdiabetesforelderly.MainMenu.MainMenu;*/
 import com.example.dokterdiabetesforelderly.MainMenu.Profil;
 import com.example.dokterdiabetesforelderly.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class KonsultasiUser extends AppCompatActivity {
-    private Button buatKonsultasi;
+    Button buatKonsultasi;
     RecyclerView recyclerKonsultasi;
     DatabaseReference dbkonsultasi;
     ArrayList<ModelKonsultasiUser> listKonsul;
@@ -41,15 +39,15 @@ public class KonsultasiUser extends AppCompatActivity {
 
         dbkonsultasi = FirebaseDatabase.getInstance().getReference();
 
-        listKonsul = new ArrayList<ModelKonsultasiUser>();
-        recyclerKonsultasi = (RecyclerView) findViewById(R.id.listKonsultasi);
+        listKonsul = new ArrayList<>();
+        recyclerKonsultasi = findViewById(R.id.listKonsultasi);
         recyclerKonsultasi.setLayoutManager(new LinearLayoutManager(this));
         recyclerKonsultasi.setHasFixedSize(true);
 
         CheckDataKonsul();
         AmbilDataKonsultasi();
 
-        buatKonsultasi = (Button) findViewById(R.id.buatkonsultasi);
+        buatKonsultasi = findViewById(R.id.buatkonsultasi);
         buatKonsultasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +65,7 @@ public class KonsultasiUser extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.konsultasiuserlain:
-                        startActivity(new Intent(KonsultasiUser.this, Konsultasi.class));
+                        startActivity(new Intent(KonsultasiUser.this, KonsultasiDiet.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.konsultasiuser:
@@ -122,9 +120,9 @@ public class KonsultasiUser extends AppCompatActivity {
         startActivity(intent);
     }
     public void back(View view) {
-        /*Intent intent = new Intent(KonsultasiUser.this, Profil.class);
+        Intent intent = new Intent(KonsultasiUser.this, Profil.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);*/
-        finish();
+        startActivity(intent);
+        /*finish();*/
     }
 }

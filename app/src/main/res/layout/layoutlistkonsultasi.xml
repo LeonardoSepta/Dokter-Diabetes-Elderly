@@ -10,7 +10,8 @@
     <RelativeLayout
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/backgroundpesan">
+        android:background="@drawable/backgroundpesan"
+        tools:ignore="UselessParent">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_item_konsultasi"
             android:layout_width="55dp"
@@ -35,7 +36,7 @@
                 android:layout_marginBottom="5dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:text="Id Konsultasi"
+                android:text="@string/id_konsultasi"
                 android:textColor="@color/black"
                 />
 
@@ -46,7 +47,7 @@
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:layout_below="@id/idKonsultasi"
-                android:text="Judul Konsultasi"
+                android:text="@string/judul_konsultasi"
                 android:textColor="@color/black"
                 />
         </RelativeLayout>
